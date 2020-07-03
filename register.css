@@ -1,0 +1,97 @@
+.regdiv{
+      background-color: #464646;
+      margin: 50px;
+      width: 600px;
+      height: auto;
+      border-radius: 5px;
+      overflow: hidden;
+      display: block;
+      padding: 10px;
+}
+legend{
+    color: #27ae60;
+    font-size: 80px;
+    margin: 10px;
+}
+label{
+    color: #00B2FF;
+    font-size: 40px;
+    margin: 10px;
+}
+body{
+      background-color: #353535;
+      font-family: 'Germania One', cursive;
+      margin: 0;
+}
+
+#header{
+      display: inline-block;
+}
+
+#indiv{
+      margin: 5px;
+      padding: 5px;
+}
+
+.input{
+      border-radius: 4px;
+      font-size: 25px;
+      background-color: #353535;
+      width: 450px;
+      height: 30px;
+      border-style: none;
+      color: #F8F8F8;
+}
+
+button{
+      border-radius: 4px;
+      background-color: #353535;
+      font-size: 35px;
+      width: 250px;
+      height: 50px;
+      border-style: none;
+      color: #27ae60;
+}
+#malesex{
+    margin-right: 50px;
+}
+#femalesex{
+    margin-left: 50px;
+}
+@media only screen and (max-width: 800px) {
+    label{
+        font-size: 25px;
+    }
+    legend{
+        font-size: 50px;
+    }
+    .regdiv{
+        height: auto;
+        width: auto;
+        margin: 40px;
+    }
+    .input{
+         width: 250px;
+     }
+    button{
+        font-size: 20px;
+        width: 250px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .regdiv{
+        height: auto;
+        width: auto;
+        margin: 15px;
+    }
+}
+
+@media only screen and (max-width: 315px) {
+    button{
+        width: 150px;
+    }
+    .input{
+        width: 150px;
+    }
+}

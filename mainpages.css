@@ -1,0 +1,348 @@
+
+#topusername{
+    color: #00B2FF;
+    font-size: 20px;
+}
+#description{
+    color: #F8F8F8;
+    font-size: 20px;
+}
+.topuserpoints{
+    color: #F8F8F8;
+    font-size: 20px;
+}
+
+.toptr{
+    margin: 10px;
+    height: 65px;
+    text-align: center;
+}
+.toptd{
+    width: 130px;
+    margin: 10px;
+    text-align: center;
+}
+
+#announcements{
+    background-color: #27ae60;
+    color: white;
+    max-width: 450px;
+    height: auto;
+    border-radius: 5px;
+}
+#announcementsp{
+    margin: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#userdiv{
+    background-color: #454646;
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    float: left;
+    text-align: justify;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+    padding: 10px;
+}
+
+#topusers{
+    background-color: #464646;
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+    padding: 10px;
+    margin: 20px;
+}
+
+.rightdiv{
+    float: right;
+    margin: 0;
+}
+
+#username{
+    display: block;
+    color: #F8F8F8;
+    font-size: 20px;
+}
+.consider{
+    color: #F8F8F8;
+    font-size: 20px;
+}
+#supportersa{
+    color: #27ae60;
+    font-size: 25px;
+}
+#userpoints{
+    display: block;
+    font-size: 20px;
+}
+#patreon{
+    width: 350px;
+    height: 125px;
+}
+
+#rewards{
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+#reward{
+    width: 175px;
+    height: 50px;
+}
+
+.usera{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    color: #F8F8F8;
+}
+.insignia{
+    margin: 5px;
+}
+#profile_picture{
+    width: 100px;
+    height: 110px;
+    padding: 5px;
+}
+
+#sleeves{
+    width: 120px;
+    display: inline-block;
+    height: 50px;
+}
+#parka{
+    width: 50px;
+    height: 50px;
+}
+#userdescdiv{
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
+#sleeves_div{
+    width: auto;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#collar_badges{
+    width: 70px;
+    height: 50px;
+}
+#collar_badgestop{
+    width: 65px;
+    height: 45px;
+}
+#postleft{
+    float: left;
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+#postright{
+    float: right;
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+#postdate{
+    font-size: 15px;
+    color: #F8F8F8;
+}
+.postpoints{
+    color: #F8F8F8;
+}
+#postera{
+    font-size: 20px;
+    color: #00B2FF;
+}
+
+#postimgdiv{
+    padding: 0;
+}
+
+#postimg{
+    width: 550px;
+}
+
+#postdiv{
+    background-color: #464646;
+    width: 600px;
+    margin: 20px;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+    padding: 5px;
+}
+
+.postbutton{
+    max-width: 70px;
+    width: auto;
+    height: 25px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: grey;
+    border-color: grey;
+    margin: 5px;
+}
+
+#titlediv{
+    font-size: 25px;
+    float: left;
+    text-align: left;
+    width: 400px;
+    margin: 5px 5px 5px 15px;
+}
+.titlea{
+    color: #F8F8F8;
+}
+
+@media only screen and (max-width: 1530px){
+    #userdiv{
+        max-width: 350px;
+    }
+    #patreon{
+        max-width: 350px;
+    }
+    #topusers{
+        max-width: 350px;
+    }
+    #announcementsp{
+        font-size: 17px;
+    }
+    #postimg{
+        width: 500px;
+    }
+    #postdiv{
+        width: 550px;
+    }
+}
+@media only screen and (max-width: 1530px){
+    #postimg{
+        width: 450px;
+    }
+    #postdiv{
+        width: 500px;
+    }
+}
+@media only screen and (max-width: 820px){
+    #userdiv{
+        max-width: 300px;
+    }
+    #patreon{
+        max-width: 300px;
+    }
+    #topusers{
+        max-width: 300px;
+    }
+    .consider{
+        font-size: 15px;
+    }
+    #supportersa{
+        font-size: 20px;
+    }
+    #topusername{
+        font-size: 17px;
+    }
+    .topuserpoints{
+        font-size: 17px;
+    }
+}
+@media only screen and (max-width: 720px){
+    #userdiv{
+        display: none;
+    }
+    #topusers{
+        display: none;
+    }
+    #postimg{
+        width: 500px;
+    }
+    #postdiv{
+        width: 550px;
+    }
+}
+@media only screen and (max-width: 600px){
+    #postimg{
+        width: 480px;
+    }
+    #postdiv{
+        width: 500px;
+    }
+    #postdiv{
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 550px){
+    #postimg{
+        width: 400px;
+    }
+    #postdiv{
+        width: 450px;
+    }
+}
+@media only screen and (max-width: 500px){
+    #postimg{
+        width: 380px;
+    }
+    #postdiv{
+        width: 400px;
+        height: auto;
+    }
+    #titlediv{
+        width: auto;
+    }
+    #postdiv{
+        margin: 5px;
+        width: 430px;
+    }
+}
+@media only screen and (max-width: 450px){
+    #postimg{
+        width: 330px;
+    }
+    #postdiv{
+        width: 350px;
+    }
+    #postleft{
+        float: none;
+        margin: 5px;
+    }
+    #postright{
+        float: none;
+        margin: 5px;
+    }
+    #titlediv{
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 400px){
+    #postimg{
+        width: 280px;
+    }
+    #postdiv{
+        width: 300px;
+    }
+    #titlea{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 350px){
+    #postimg{
+        width: 240px;
+    }
+    #postdiv{
+        width: 250px;
+    }
+}

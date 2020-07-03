@@ -1,0 +1,232 @@
+#uploaddiv{
+    max-width: 1000px;
+    height: auto;
+    margin: 50px;
+    vertical-align: center;
+    padding: 15px;
+    display: block;
+}
+#uploaddivup{
+    background-color: #6F6F6F;
+    max-width: 1000px;
+    min-height: 500px;
+    border-style: solid;
+    border-color: #00B2FF;
+    border-width: 10px;
+}
+#uploaddivdown{
+    background-color: #27ae60;
+    max-width: 1000px;
+    height: auto;
+    border-style: solid;
+    border-color: #00B2FF;
+    border-width: 10px;
+}
+
+#uploadh1{
+    font-size: 70px;
+    color: #00B2FF;
+    margin-bottom: 0;
+}
+label{
+    font-size: 40px;
+    color: #00B2FF;
+}
+#leftdiv1{
+    float: left;
+    vertical-align: center;
+    max-width: 400px;
+    height: 200px;
+    margin: 30px 100px 30px 80px;
+}
+#rightdiv1{
+    max-width: 400px;
+    float: right;
+    vertical-align: bottom;
+    height: 100px;
+    margin: 30px 80px 30px 100px;
+    padding: 80px 0 0;
+}
+#fileuploadbutton{
+    visibility: hidden;
+    max-width: 0;
+}
+#filelabel{
+    margin-right: 25px;
+    cursor: pointer;
+    font-size: 40px;
+    color: #00B2FF;
+}
+.input{
+    border-radius: 4px;
+    background-color: #F8F8F8;
+    width: 200px;
+    height: 25px;
+    border-style: none;
+    display: block;
+    margin: 5px;
+}
+#submit{
+    border-radius: 4px;
+    background-color: #2A2A2A;
+    width: 300px;
+    height: 40px;
+    border-style: none;
+    color: #00B2FF;
+    font-size: 30px;
+}
+#subdiv{
+    max-width: 300px;
+    max-height: 50px;
+}
+.hintdiv{
+    display: inline-block;
+    max-width: 200px;
+    height: auto;
+    margin-top: 10px;
+}
+.hintpic{
+    max-width: 70px;
+}
+.hinttext{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 945px) {
+    #leftdiv1{
+        margin: 20px 50px 20px 40px;
+    }
+    #rightdiv1{
+        margin: 20px 40px 20px 50px;
+    }
+    #uploadh1{
+        font-size: 50px;
+    }
+    label{
+        font-size: 30px;
+    }
+    #filelabel{
+        font-size: 30px;
+    }
+    #submit{
+        width: 250px;
+        height: 30px;
+        font-size: 25px;
+    }
+    #uploaddivup{
+        min-height: 400px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    #leftdiv1{
+        margin: 10px 30px 10px 30px;
+        float: none;
+        height: 160px;
+    }
+    #rightdiv1{
+        margin: 10px 30px 10px 30px;
+        float: none;
+        padding: 0;
+        height: 50px;
+    }
+    #uploadh1{
+        font-size: 50px;
+    }
+    #filelabel{
+        margin-right: 0;
+    }
+    #fileuploadbutton{
+        width: 0;
+        height: 0;
+    }
+    label{
+        font-size: 30px;
+    }
+    #filelabel{
+        font-size: 30px;
+    }
+    #submit{
+        width: 250px;
+        height: 30px;
+        font-size: 25px;
+    }
+    #uploaddivup{
+        min-height: 400px;
+    }
+    #subdiv{
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .input{
+        max-width: 200px;
+    }
+    #uploaddiv{
+        margin: 10px;
+    }
+    #leftdiv1{
+        margin: 5px 20px 5px 20px;
+    }
+    #rightdiv1{
+        margin: 5px 20px 5px 20px;
+    }
+    #uploadh1{
+        font-size: 50px;
+    }
+    #filelabel{
+        margin-right: 0;
+    }
+    #fileuploadbutton{
+        width: 0;
+        height: 0;
+    }
+    label{
+        font-size: 30px;
+    }
+    #filelabel{
+        font-size: 30px;
+    }
+    #submit{
+        max-width: 200px;
+    }
+    #uploaddivup{
+        min-height: 400px;
+    }
+    #subdiv{
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    .input{
+        width: 150px;
+    }
+    #uploaddiv{
+        margin: 10px;
+    }
+    #leftdiv1{
+        margin: 5px 10px 5px 10px;
+    }
+    #rightdiv1{
+        margin: 5px 10px 5px 10px;
+    }
+    #uploadh1{
+        font-size: 40px;
+    }
+    label{
+        font-size: 25px;
+    }
+    #filelabel{
+        font-size: 25px;
+    }
+    #submit{
+        width: 150px;
+    }
+    #uploaddivup{
+        min-height: 400px;
+    }
+    #subdiv{
+        margin: 5px;
+    }
+}

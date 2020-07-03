@@ -1,0 +1,36 @@
+body{
+    background-image: url("pictures/backgrounds/25.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: 'Germania One', cursive;
+}
+
+#regdiv{
+
+}
+
+#thankp{
+    font-size: 60px;
+}
+
+#front{
+    font-size: 40px;
+    color: black;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        background-image: url("pictures/mobile wallpapers/1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #thankp{
+        font-size: 30px;
+    }
+
+    #front{
+        font-size: 20px;
+    }
+}

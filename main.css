@@ -1,0 +1,277 @@
+body{
+    background-color: #353535;
+    font-family: 'Germania One', cursive;
+    margin: 0;
+}
+.disabled{
+    display: none;
+}
+.dropdownclass{
+    display: none;
+}
+
+#headernav{
+    list-style-type: none;
+    text-align: center;
+    background-color: #464646;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#headerul{
+    margin: 0;
+}
+.navbara{
+    color: #F8F8F8;
+}
+.navbarli{
+    display: inline-block;
+    padding: 10px;
+}
+
+.navbarli:hover{
+    background-color: #515151;
+}
+
+a{
+    padding: 10px;
+    margin: 0;
+    text-decoration: none;
+}
+
+#logout{
+    color: black;
+    background-color: #464646;
+    border-style: none;
+    font-family: 'Germania One', cursive;
+
+}
+.footerdiv{
+    background-color: #464646;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #EEEEEE;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2A2A2A;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#ftable{
+    margin: auto;
+    padding: 5px;
+}
+
+.footerh, .footertd, .foottertr{
+    text-align: center;
+    padding: 15px;
+}
+
+.footerh{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.footertd{
+    width: 300px;
+    font-size: 20px;
+}
+
+audio{
+    position: sticky;
+    bottom: 10px;
+    left: 10px;
+}
+
+.settingsnav{
+    float: right;
+}
+
+.disabled{
+    display: none;
+    width: 0;
+    margin: 0;
+}
+
+.page-item{
+    width: auto;
+    height: auto;
+    display:inline-block;
+    text-align:center;
+    font-size:25px;
+    vertical-align: super;
+}
+.enabled{
+    margin: 5px;
+}
+.pagilia{
+    padding: 0;
+}
+.page-link{
+    color: #F8F8F8;
+    padding: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#pagiul{
+    padding: 0;
+    margin: 2px;
+}
+#pagination{
+    width: 500px;
+    height: auto;
+    background-color: #464646;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 2px;
+    text-align: center;
+}
+.pagili{
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    display:inline-block;
+    text-align:center;
+}
+
+.footera{
+    color: #F8F8F8;
+}
+.footerh{
+    color: #00B2FF;
+}
+
+@media only screen and (max-width: 800px) {
+    .dropdownclass{
+        display: block;
+    }
+    .footerdiv{
+        display: none;
+    }
+    .navbarli{
+        display: none;
+        padding: 10px;
+        width: auto;
+    }
+    #dropdownimg:hover{
+        transform: rotate(90deg);
+    }
+    #headerul{
+        padding: 0;
+    }
+    .settingsnav{
+        float: none;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .page-link{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #pagiul{
+        margin: 2px;
+    }
+    #pagination{
+        width: 450px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        padding: 2px;
+    }
+    .pagili{
+        margin: 5px;
+        width: 25px;
+        height: 25px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .enabled{
+        margin: 5px;
+    }
+    .page-link{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #pagiul{
+        margin: 2px;
+    }
+    #pagination{
+        width: 400px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        padding: 2px;
+    }
+    .pagili{
+        margin: 5px;
+        width: 25px;
+        height: 25px;
+    }
+}
+@media only screen and (max-width: 410px) {
+    .enabled{
+        margin: 3px;
+    }
+    .page-link{
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    #pagiul{
+        margin: 3px;
+    }
+    #pagination{
+        width: auto;
+        margin: 25px 5px;
+        padding: 2px;
+    }
+    .pagili{
+        margin: 3px;
+        width: 20px;
+        height: 20px;
+    }
+    .pagilia{
+        width: 20px;
+        height: 20px;
+    }
+}
+@media only screen and (max-width: 380px) {
+    .enabled{
+        margin: 3px;
+    }
+    .page-link{
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    #pagiul{
+        margin: 3px;
+    }
+    #pagination{
+        width: auto;
+        margin: 25px 5px;
+        padding: 2px;
+    }
+    .pagili{
+        margin: 3px;
+        width: 20px;
+        height: 20px;
+    }
+    .pagilia{
+        width: 20px;
+        height: 20px;
+    }
+}

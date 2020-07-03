@@ -1,0 +1,310 @@
+.maindiv1{
+    background-color: #555555;
+    text-align: center;
+    width: 600px;
+    height: auto;
+    display: none;
+    margin: 70px 0 70px 0;
+    vertical-align: text-top;
+}
+#footerdiv{
+    margin-bottom: 0;
+}
+.settingform{
+    height: auto;
+    padding-top: 30px;
+}
+#picupload{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+#profile_picture{
+    width: 190px;
+    height: 200px;
+    margin: 20px;
+}
+
+#realprofpic{
+    background-color: #555555;
+    text-align: center;
+    width: 600px;
+    height: 450px;
+    display: inline-block;
+    margin: 70px 0 70px 0;
+    vertical-align: text-top;
+}
+
+#leftnavdiv{
+    background-color: #464646;
+    width: 300px;
+    display: inline-block;
+    float: left;
+    height: 450px;
+    margin: 70px 0 70px 0;
+}
+
+.leftnava{
+    vertical-align: 0.70em;
+    padding: 0;
+    width: 100px;
+    color: #F8F8F8;
+    margin: 10px;
+    font-size: 25px;
+}
+
+#leftdropdown{
+    display: none;
+}
+
+#leftnavul{
+    list-style: none;
+    padding: 5px;
+    margin: 25px 0 25px 0;
+}
+
+.leftnavli{
+    cursor: pointer;
+    margin: 20px;
+}
+
+.leftnavli:hover{
+    background-color: #555555;
+}
+
+.leftnavimg{
+    width: 50px;
+    height: 50px;
+}
+#settingsfilelabel{
+    cursor: pointer;
+    font-size: 35px;
+    margin: 5px;
+    color: #F8F8F8;
+}
+#settingsfilelabel:hover{
+    color: #27ae60;
+}
+
+#settingsfilelabel:active{
+    color: #27ae60;
+}
+.submit{
+    border-radius: 4px;
+    background-color: #353535;
+    width: 400px;
+    height: 50px;
+    border-style: none;
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+    color: #F8F8F8;
+}
+.input{
+    border-radius: 4px;
+    background-color: #353535;
+    color: #00B2FF;
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    border-style: none;
+    display: block;
+    margin: 20px 10px 10px;
+}
+.submit:hover{
+    color: #27ae60;
+}
+
+#subdiv{
+    margin: 10px;
+}
+label{
+    color: #F8F8F8;
+    font-size: 35px;
+    margin: 20px;
+}
+@media only screen and (max-width: 940px) {
+    .maindiv1{
+        width: 400px;
+        margin: 70px 0 70px 0;
+    }
+    #profile_picture{
+        width: 140px;
+        height: 150px;
+        margin: 20px;
+    }
+    #realprofpic{
+        background-color: #555555;
+        text-align: center;
+        width: 400px;
+        height: auto;
+        display: inline-block;
+        margin: 70px 0 70px 0;
+        vertical-align: text-top;
+    }
+
+    #leftnavdiv{
+        background-color: #464646;
+        width: 300px;
+        display: inline-block;
+        float: left;
+        height: 450px;
+        margin: 70px 0 70px 0;
+    }
+
+    .leftnava{
+        vertical-align: 0.70em;
+        padding: 0;
+        color: #F8F8F8;
+        margin: 10px;
+        font-size: 20px;
+    }
+
+    #leftnavul{
+        list-style: none;
+        padding: 5px;
+        margin: 25px 0 25px 0;
+    }
+
+    .leftnavli{
+        cursor: pointer;
+        margin: 20px;
+    }
+
+    .leftnavli:hover{
+        background-color: #555555;
+    }
+
+    .leftnavimg{
+        width: 50px;
+        height: 50px;
+    }
+    #settingsfilelabel{
+        cursor: pointer;
+        font-size: 25px;
+        margin: 5px;
+        color: #F8F8F8;
+    }
+    .submit{
+        border-radius: 4px;
+        background-color: #353535;
+        width: 300px;
+        height: 30px;
+        border-style: none;
+        font-size: 25px;
+        margin: 10px;
+        cursor: pointer;
+        color: #F8F8F8;
+    }
+    .input{
+        border-radius: 4px;
+        background-color: #353535;
+        color: #00B2FF;
+        width: 250px;
+        height: 30px;
+        font-size: 20px;
+        border-style: none;
+        display: block;
+        margin: 20px 10px 10px;
+    }
+    label{
+        color: #F8F8F8;
+        font-size: 25px;
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .maindiv1{
+        width: 400px;
+        margin: 30px 0 30px 0;
+    }
+    .input{
+        border-radius: 4px;
+        background-color: #353535;
+        color: #00B2FF;
+        width: 200px;
+        height: 30px;
+        font-size: 15px;
+        border-style: none;
+        display: block;
+        margin: 0;
+    }
+    #profile_picture{
+        width: 140px;
+        height: 150px;
+        margin: 20px;
+    }
+    #realprofpic{
+        width: auto;
+        height: auto;
+        margin: 30px 0 30px 0;
+    }
+
+    #leftnavdiv{
+        background-color: #464646;
+        width: auto;
+        display: block;
+        float: none;
+        height: auto;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .leftnava{
+        width: 150px;
+        vertical-align: 1em;
+    }
+
+    .leftnavli{
+        cursor: pointer;
+        margin: 0;
+    }
+    .leftnavimg{
+        width: 50px;
+        height: 50px;
+    }
+
+    .submit{
+        width: 300px;
+        height: 30px;
+        font-size: 25px;
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #profile_picture{
+        width: 110px;
+        height: 120px;
+        margin: 20px;
+    }
+    #realprofpic{
+        width: auto;
+        height: auto;
+        margin: 15px 0 15px 0;
+    }
+    .maindiv1{
+        width: 400px;
+        margin: 15px 0 15px 0;
+    }
+    #settingsfilelabel{
+        font-size: 20px;
+        margin: 5px;
+    }
+    label{
+        font-size: 15px;
+        margin: 5px;
+    }
+    .input{
+        width: 250px;
+        height: 30px;
+        font-size: 15px;
+    }
+    .submit{
+        width: 150px;
+        height: 30px;
+        font-size: 25px;
+        margin: 10px;
+    }
+}

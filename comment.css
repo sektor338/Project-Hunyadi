@@ -1,0 +1,192 @@
+.commentsec{
+    display: none;
+    margin-top: 50px;
+}
+.commentwrite{
+    display: block;
+    margin-left: 25px;
+}
+.commentwriteprofpic{
+    max-width: 50px;
+    float: left;
+    display: inline-block;
+}
+.commentprofpicdiv{
+    height: 100px;
+
+}
+.commentprofpic{
+    max-width: 40px;
+    float: left;
+}
+.commentwritetextboxdiv{
+    display: inline-block;
+    max-width: 250px;
+}
+.commentinput{
+    background-color: #2C2C2C;
+    max-height: 40px;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    color: #F8F8F8;
+}
+.commentwritesubmit{
+    background-color: #2C2C2C;
+    width: 150px;
+    margin-right: 15px;
+    height: 30px;
+    border: none;
+    float: right;
+    border-radius: 30px;
+    color: #27ae60;
+}
+.comments{
+    margin-left: 25px;
+    display: block;
+    margin-top: 50px;
+}
+.commentsupperrightup{
+    max-width: 300px;
+    margin-left: -100px;
+}
+.commentsupperrightupname{
+    color: #00B2FF;
+}
+.commentsupperrightupdate{
+    color: #F8F8F8;
+}
+.commentsupperrightuppoints{
+    color: #F8F8F8;
+}
+.commentsupperrightupedit{
+    max-width: 15px;
+}
+.commentsupperrightupdelete{
+    max-width: 15px;
+}
+.commentsupperrightdownp{
+    max-width: 300px;
+    text-align: left;
+    margin-top: 5px;
+    word-wrap: break-word;
+    color: #F8F8F8;
+}
+.commentsupperrightdown{
+    max-width: 300px;
+}
+.commentsbottom{
+    margin-top: 20px;
+}
+.commentsbottombuttons{
+    max-width: 30px;
+}
+.commentdiv{
+    margin-top: 10px;
+}
+.commentload{
+    background-color: #2C2C2C;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    display: block;
+    color: #27ae60;
+}
+.ceditdiv{
+    display: none;
+}
+.commenteditsavep{
+    background-color: #2C2C2C;
+    max-width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    color: #F8F8F8;
+}
+.commenteditsave{
+    background-color: #2C2C2C;
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    display: block;
+    margin: 5px;
+    color: #27ae60;
+}
+@media only screen and (max-width: 530px){
+    .commentsupperrightdownp{
+        max-width: 200px;
+    }
+    .commentsupperrightup{
+        margin-left: 30px;
+    }
+}
+@media only screen and (max-width: 510px){
+    .commentinput{
+        width: 200px;
+    }
+    .commentwritesubmit{
+        width: 100px;
+        margin-right: 0;
+        float: none;
+    }
+    .commentsupperrightname{
+        padding: 2px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .commentsupperrightupdate{
+        display: none;
+    }
+    .commentsupperrightup{
+        margin-left: -145px;
+    }
+}
+@media only screen and (max-width: 420px){
+    .commentwriteprofpic{
+        display: none;
+    }
+    .commentwrite{
+        margin-left: 0;
+    }
+    .commentsupperrightup{
+        margin-left: -200px;
+    }
+
+}
+@media only screen and (max-width: 400px){
+    .commentsupperrightdownp{
+        max-width: 150px;
+    }
+    .commentprofpic{
+        max-width: 30px;
+    }
+    .commenteditsavep{
+        max-width: 150px;
+    }
+}
+@media only screen and (max-width: 335px){
+    .commentsupperrightdownp{
+        max-width: 100px;
+    }
+    .commentinput{
+        max-width: 200px;
+    }
+    .commenteditsavep{
+        max-width: 100px;
+    }
+}
+@media only screen and (max-width: 280px){
+    .commentinput{
+        max-width: 150px;
+    }
+    .commentsupperrightdownp{
+        margin-left: 30px;
+    }
+}
+@media only screen and (max-width: 225px){
+    .commentinput{
+        max-width: 100px;
+    }
+}

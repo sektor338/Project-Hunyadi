@@ -1,0 +1,151 @@
+#titlea{
+    font-size: 30px;
+    display: block;
+    color: #27ae60;
+}
+main{
+    margin-bottom: 268px;
+}
+.navbara{
+    color: #F8F8F8;
+}
+.partdiv{
+    width: auto;
+    display: block;
+}
+.footera{
+    color: #F8F8F8;
+}
+.footerh{
+    color: #00B2FF;
+}
+.maindiv{
+    width: auto;
+    display: block;
+}
+
+.patronsdiv{
+    width: auto;
+    display: block;
+    margin: 10px;
+    padding: 5px;
+}
+
+.tdname{
+    width: auto;
+    min-width: 150px;
+    display: block;
+    margin: 5px;
+}
+
+.tdcollar{
+    width: auto;
+    display: block;
+    margin: 5px;
+    min-width: 100px;
+}
+
+.tdsleeves{
+    width: auto;
+    display: block;
+    margin: 5px;
+    min-width: 100px;
+}
+
+.tdparka{
+    width: auto;
+    display: block;
+    margin: 5px;
+    min-width: 100px;
+}
+
+.tdbadge{
+    width: auto;
+    display: block;
+    margin: 5px;
+    min-width: 100px;
+}
+
+.tdpoints{
+    width: auto;
+    display: block;
+    margin: 5px;
+    min-width: 20px;
+}
+
+.namea{
+    font-size: 50px;
+    color: #F8F8F8;
+}
+
+.collar_badges{
+    max-width: 250px;
+}
+
+.shoulder_straps{
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.parka{
+    max-width: 100px;
+}
+
+.badge{
+    max-width: 250px;
+}
+
+.pointa{
+    font-size: 50px;
+    color: #F8F8F8;
+}
+@media only screen and (max-width: 500px){
+    .namea{
+        font-size: 20px;
+    }
+    .pointa{
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1066px) {
+    #titlea{
+        font-size: 60px;
+    }
+
+    .partdiv{
+        display: inline-block;
+    }
+
+    .maindiv{
+        display: inline-block;
+    }
+
+    .patronsdiv{
+        display: inline-block;
+    }
+
+    .tdname{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .tdcollar{
+        display: inline-block;
+    }
+
+    .tdsleeves{
+        display: inline-block;
+    }
+
+    .tdparka{
+        display: inline-block;
+    }
+
+    .tdbadge{
+        display: inline-block;
+    }
+
+    .tdpoints{
+        display: inline-block;
+    }
+}

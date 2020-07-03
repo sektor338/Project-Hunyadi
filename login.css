@@ -1,0 +1,218 @@
+body{
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      font-family: 'Germania One', cursive;
+}
+
+.maindiv{
+      background-color: #464646;
+      width: 600px;
+      height: 400px;
+      border-radius: 5px;
+      overflow: hidden;
+      display: block;
+      padding: 0;
+      margin: 30px auto auto;
+      opacity: 0.9;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEEEEE;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.inputdiv{
+      margin: 30px;
+}
+
+.input{
+      height: 30px;
+      width: 400px;
+      font-size: 30px;
+      border-radius: 5px;
+      background-color: #6F6F6F;
+      border-color: #6F6F6F;
+      border-style: solid;
+      border-width: 5px;
+      color: #F8F8F8;
+}
+
+#bar{
+      font-size: 70px;
+      background-color: #353535;
+      margin: 0;
+      color: #00B2FF;
+}
+
+::placeholder{
+      color: #F8F8F8;
+}
+
+#header{
+      background-color: #353535;
+      width: 800px;
+      height: 200px;
+      border-radius: 5px;
+      overflow: hidden;
+      display: inline-block;
+      padding: 0;
+      margin: 30px auto auto;
+      opacity: 0.9;
+}
+
+#eagle{
+      font-size: 90px;
+      float: right;
+      color: #27ae60;
+      margin-right: 20px;
+      margin-top: 40px
+}
+
+#logo{
+      height: 165px;
+      width: 250px;
+      float: left;
+      margin: 20px 5px 5px;
+}
+#forgotpwd{
+      color: #00B2FF;
+      font-size: 25px;
+}
+#login{
+      height: 45px;
+      width: 150px;
+      border-radius: 5px;
+      background-color: #6F6F6F;
+      border-color: #6F6F6F;
+      border-style: solid;
+      border-width: 5px;
+      color: #27ae60;
+      font-size: 30px;
+}
+
+
+@media only screen and (max-width: 1060px) {
+      body{
+            background-image: url("pictures/mobile wallpapers/1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+      .maindiv{
+            width: auto;
+            height: auto;
+            margin: 60px;
+      }
+}
+@media only screen and (max-width: 850px) {
+      #header{
+            width: 600px;
+      }
+      #eagle{
+            font-size: 60px;
+            width: auto;
+            height: auto;
+      }
+      .maindiv{
+            margin: 60px;
+      }
+      .input{
+            height: 25px;
+            max-width: 300px;
+            width: auto;
+      }
+}
+@media only screen and (max-width: 650px) {
+      #header{
+            width: 550px;
+      }
+      #eagle{
+            font-size: 50px;
+      }
+      #logo{
+            width: auto;
+      }
+      .maindiv{
+            margin: 60px;
+      }
+      .input{
+            height: 25px;
+            max-width: 300px;
+            width: auto;
+      }
+}
+@media only screen and (max-width: 600px) {
+      #header{
+            width: 500px;
+      }
+      #eagle{
+            font-size: 40px;
+      }
+      #logo{
+            width: 250px;
+            height: 150px;
+      }
+      .maindiv{
+            margin: 30px;
+      }
+      #bar{
+            font-size: 50px;
+      }
+      .input{
+            font-size: 20px;
+            height: 20px;
+            width: auto;
+      }
+      #login{
+            font-size: 25px;
+            width: 100px;
+            height: auto;
+      }
+      #forgotpwd{
+            font-size: 20px;
+      }
+}
+@media only screen and (max-width: 510px) {
+      #logo{
+            display: none;
+      }
+      #eagle{
+            float: none;
+            margin: 20px;
+            font-size: 50px;
+      }
+      #header{
+            width: auto;
+            height: auto;
+      }
+}
+@media only screen and (max-width: 380px) {
+      #logo{
+            display: none;
+      }
+      #eagle{
+            float: none;
+            margin: 10px;
+            font-size: 45px;
+      }
+      .input{
+            width: auto;
+            font-size: 15px;
+      }
+      #bar{
+            font-size: 40px;
+      }
+}
