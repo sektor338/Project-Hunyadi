@@ -1,0 +1,24 @@
+#contactdiv{
+    background-color: #6F6F6F;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin: 50px 50px 250px;
+}
+#contactp{
+    color: #F8F8F8;
+    font-size: 30px;
+}
+h1{
+    color: darkred;
+    font-size: 50px;
+}
+@media only screen and (max-width: 650px){
+    h1{
+        font-size: 40px;
+    }
+    #contactp{
+        font-size: 25px;
+    }
+}
