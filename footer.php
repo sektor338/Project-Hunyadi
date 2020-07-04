@@ -30,17 +30,10 @@
         </tr>
         <tr class="footertr">
             <td class="footertd"><a class="footera" href="supporters.php">Supporters</a></td>
-            <td class="footertd"><a class="footera" href="https://pannoniait.wordpress.com/" target='_blank'>Pannonia Information Technology</a></td>
+            <td class="footertd"><a class="footera" target="_blank" href="https://icons8.com">Icons by Icons8</a></td>
             <td class="footertd"><a class="footera" href="faq.php">FAQ</a></td>
             <td class="footertd"></td>
             <td class="footertd"><a class="footera" href="bookshelf.php">Bookshelf</a></td>
-        </tr>
-        <tr class="footertr">
-            <td class="footertd"></td>
-            <td class="footertd"><a class="footera" target="_blank" href="https://icons8.com">Icons by Icons8</a></td>
-            <td class="footertd"></td>
-            <td class="footertd"></td>
-            <td class="footertd"></td>
         </tr>
     </table>
 </div>

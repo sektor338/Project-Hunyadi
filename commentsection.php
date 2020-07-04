@@ -30,20 +30,9 @@ if (isset($_POST['commentlimit'])){
                         <a class='commentsupperrightupname' href=''>".$commentrow['commenter']."</a>
                         <a class='commentsupperrightupdate'>".substr($commentrow['comment_date'], 0, -9)."</a>
                         <a class='".$commentrow['comment_id']." commentsupperrightuppoints'>".$commentrow['cpoints']."</a>
-                        ";
-                        if ($commentrow['commenter'] == $_SESSION['username']){
-                            echo "<img style='cursor: pointer;' id='".$commentrow['comment_id']."' class='".$commentrow['post_id']." commentsupperrightupedit' src='pictures/icons/edit.png' alt='editb' onclick='ceditdisplay()'>
-                        <img style='cursor: pointer;' id='".$commentrow['comment_id']."' class='".$commentrow['post_id']." commentsupperrightupdelete' src='pictures/icons/delete.png' alt='deleteb' onclick='cdelete()'>";
-                        }
-                        else{
-                            echo "<img class='commentsupperrightupedit' src='pictures/ranks and insignia/Sleeve(parka)/trans.png' alt='editb'>
-                        <img class='commentsupperrightupdelete' src='pictures/ranks and insignia/Sleeve(parka)/trans.png' alt='deleteb'>";
-
-                        }
-                        echo "
                 </div>
-                <div class='commentsupperrightdown'>
-                    <p class='commentsupperrightdownp'>".$commentrow['message']."</p>
+                <div class='".$commentrow['comment_id']." commentsupperrightdown'>
+                    <p class='".$commentrow['comment_id']." commentsupperrightdownp'>".$commentrow['message']."</p>
                 </div>
             </div>
             </div>
@@ -87,16 +76,17 @@ echo "'> <img class='".$commentrow['comment_id']." cdownvote' name='".$commentro
                     echo "pictures/icons/downvoteb.png";
                 }
             }echo "'>";
-            if(isset($_SESSION['username'])){
                 $checkreportedcomments = mysqli_query($conn, "SELECT COUNT(*) FROM commentreports WHERE commentid = '".$commentrow['comment_id']."' AND reporter = '".$_SESSION['username']."'");
-                if (mysqli_fetch_array($checkreportedcomments)[0] == 0) {
+                if (mysqli_fetch_array($checkreportedcomments)[0] == 0 && $commentrow['commenter'] != $_SESSION['username']) {
                     echo "<img class='".$commentrow['comment_id']." commentsbottombuttons' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='creportf()' src='pictures/icons/report.png'>";
                 }
-                else{
-                    echo "<img class='commentsbottombuttons' style='height: 35px; width: 35px; cursor: pointer;' src='pictures/icons/report.png'>";
-                }
+            if ($commentrow['commenter'] == $_SESSION['username']){
+                echo "<img style='cursor: pointer;' id='".$commentrow['comment_id']."' class='".$commentrow['post_id']." commentsupperrightupedit' src='pictures/icons/edit.png' alt='editb' onclick='ceditdisplay()'>
+                        <img style='cursor: pointer;' id='".$commentrow['comment_id']."' class='".$commentrow['post_id']." commentsupperrightupdelete' src='pictures/icons/delete.png' alt='deleteb' onclick='cdelete()'>";
             }
-            echo " </div>";
+
+
+            echo " </div></div><hr></div>";
         }
         echo "
         

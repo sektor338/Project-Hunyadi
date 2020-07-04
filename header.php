@@ -4,7 +4,7 @@ include_once 'dbh.inc.php';
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<link rel="icon" href="pictures/logo/logo.jpg">
+<link rel="icon" href="pictures/logo/Schwarze Sonne.png">
 <meta name="description" content="The best place on the internet">
 <meta name="keywords" content="national socialism, Hitler, funny">
 <meta name="author" content="Martin Mészáros">

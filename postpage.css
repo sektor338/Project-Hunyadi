@@ -166,15 +166,14 @@ td{
 }
 
 #postimg{
-    width: 550px;
+    width: 800px;
     height: auto;
 }
 
 #postdiv{
     background-color: #464646;
     margin: 30px;
-    max-width: 600px;
-    width: auto;
+    width: 850px;
     height: auto;
     border-radius: 5px;
     overflow: hidden;
@@ -205,25 +204,21 @@ td{
     padding: 5px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
     #postimg{
-        max-width: 100%;
-        width: auto;
-        height: auto;
+        width: 700px;
+    }
+    #postdiv{
+        width: 720px;
     }
     .dropdownclass{
         display: block;
-    }
-
-    .footerdiv{
-        display: none;
     }
     .navbarli{
         display: none;
         padding: 10px;
         width: auto;
     }
-
     #dropdownimg:hover{
         transform: rotate(90deg);
     }
@@ -236,16 +231,27 @@ td{
     #headerul{
         padding: 0;
     }
-    #postright{
-        float: none;
-        margin: 0;
-    }
     .settingsnav{
         float: none;
     }
 }
-@media only screen and (max-width: 1200px) {
-    #topusers{
+@media only screen and (max-width: 800px) {
+    .footerdiv{
         display: none;
+    }
+    #postimg{
+        width: 630px;
+    }
+    #postdiv{
+        width: 650px;
+        margin: 5px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    #postimg{
+        width: 530px;
+    }
+    #postdiv{
+        width: 550px;
     }
 }
