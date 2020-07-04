@@ -13,6 +13,9 @@
     text-align: left;
     margin-left: 70px;
 }
+.commentsupper{
+    height: auto;
+}
 .commentwrite{
     display: block;
     margin-top: 80px;
