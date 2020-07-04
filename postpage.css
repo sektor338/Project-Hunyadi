@@ -9,6 +9,7 @@ body{
 }
 .navbara{
     color: #F8F8F8;
+    font-size: 25px;
 }
 #headernav{
     list-style-type: none;
@@ -30,14 +31,6 @@ body{
 
 .navbarli:hover{
     background-color: #515151;
-}
-
-#topusername{
-    color: #00B2FF;
-}
-
-#description{
-    color: #F8F8F8;
 }
 
 a{
@@ -105,7 +98,6 @@ td{
     width: 300px;
 }
 
-
 #postleft{
     float: left;
     margin-left: 15px;
@@ -119,17 +111,15 @@ td{
 }
 
 #postdate{
-    font-size: 15px;
-    color: #F8F8F8;
-}
-.topuserpoints{
+    font-size: 20px;
     color: #F8F8F8;
 }
 .postpoints{
     color: #F8F8F8;
+    font-size: 20px;
 }
 #postera{
-    font-size: 15px;
+    font-size: 20px;
     color: #00B2FF;
 }
 
@@ -244,7 +234,10 @@ td{
     }
     #postdiv{
         width: 650px;
-        margin: 5px;
+        margin: 30px 5px 20px;
+    }
+    .navbara{
+        font-size: 20px;
     }
 }
 @media only screen and (max-width: 780px) {
@@ -253,5 +246,44 @@ td{
     }
     #postdiv{
         width: 550px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    #postimg{
+        width: 430px;
+        margin: 0;
+    }
+    #postdiv{
+        width: 450px;
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 470px) {
+    #postimg{
+        width: 350px;
+        min-height: 180px;
+    }
+    #postdiv{
+        width: 350px;
+    }
+    #postleft{
+        float: none;
+        margin: 5px;
+    }
+    #postright{
+        float: none;
+        margin: 5px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    #postimg{
+        width: 250px;
+        min-height: 150px;
+    }
+    #postdiv{
+        width: 250px;
+    }
+    .navbara{
+        font-size: 15px;
     }
 }

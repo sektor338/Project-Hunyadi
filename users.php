@@ -113,23 +113,14 @@ if (isset($_SESSION['username'])) {
                             <div class='maindiv ".$row['post_id']."' id='postdiv'>
                                 <div id='titlediv'>
                                     <a class='titlea' href='post.php?postid=".$row['post_id']."'>".$row['title']."</a>
-                                </div>
-                                <div id='postimgdiv'>";
-
+                                </div>";
             if (strtolower(substr($row['image'], -3)) == "mp4" || strtolower(substr($row['image'], -4)) == "webm" || strtolower(substr($row['image'], -3)) == "mov") {
                 echo " <video id='postimg' src='pictures/posts/".$row['image']."' controls> Something went wrong :( </video>";
             }
             else {
-                echo "<a target='_blank' href='pictures/posts/".$row['image']."'><img src='pictures/posts/".$row['image']."' alt='postimg' id='postimg'></a>";
+                echo "<img src='pictures/posts/".$row['image']."' alt='postimg' id='postimg'>";
             }
-
-
-
-
-
-
-            echo "
-                                </div>
+      echo "
 <div id='postleft' style='display:inline-block;'>
 <a class='postpoints' id='".$row['post_id']."' style='height: 35px; width: 35px; vertical-align:super; font-size:25px;'>".$row['points']."</a>
 
