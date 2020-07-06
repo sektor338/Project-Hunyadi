@@ -167,6 +167,8 @@
 
 #postimg{
     width: 700px;
+    max-height: 700px;
+    height: auto;
 }
 
 #postdiv{
@@ -258,6 +260,8 @@
     }
     #postimg{
         width: 610px;
+        max-height: 450px;
+        height: auto;
     }
     #postdiv{
         width: 630px;
