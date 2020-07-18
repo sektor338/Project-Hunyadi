@@ -4,15 +4,15 @@ include_once 'dbh.inc.php';
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#2b5797">
+<link rel="apple-touch-icon" sizes="180x180" href="/pictures/logo/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pictures/logo/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pictures/logo/favicon-16x16.png">
+<link rel="manifest" href="/pictures/logo/site.webmanifest">
+<link rel="shortcut icon" href="/pictures/logo/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/pictures/logo/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="The best place on the internet">
-<meta name="keywords" content="national socialism, Hitler, funny">
+<meta name="description" content="Home of the HDL refugees and the best place on the internet.">
 <meta name="author" content="Martin Mészáros">
 <link href="https://fonts.googleapis.com/css?family=Germania+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mainpages.css">

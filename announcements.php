@@ -1,6 +1,5 @@
 <p id="announcementsp">
-    "What do you want?<br>
-    We must ensure the existence of our people, and a future for white
-    children."<br>
-    - Brenton Harrison Tarrant, The Great Replacement
+    Devlog #1 <br>
+    After 1st of August the site's url(link) will be changed to eaglesnest88.com <br>
+    Please share this information with everyone.
 </p>

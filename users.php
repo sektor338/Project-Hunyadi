@@ -11,12 +11,6 @@ if ($_GET['user'] == '') {
 <body>
 <?php include 'navbar.php'; ?>
 
-<?php
-if (isset($_SESSION['username'])) {
-    include 'ranks.php';
-}
-?>
-
 <main>
     <center>
         <div id="announcements">
@@ -92,20 +86,70 @@ if (isset($_SESSION['username'])) {
         $result = mysqli_query($conn, $total_pages_sql);
         $total_rows = mysqli_fetch_array($result)[0];
         $total_pages = ceil($total_rows / $size);
-
         function paginate($total_rows, $page, $size, $total_pages)
         {
             $markup = "";
             $page1 = 1;
-            for ($i = 0; $i < $total_rows; $i+=$size) {
-                $markup .= "<li style='width: 30px; height: 30px; display:inline-block; text-align:center; font-size:20px; vertical-align:sub;' class=\"page-item\">
-                                         <a class=\"page-link\" href=\"?page=$page1\">$page1</a>
-                                         </li>";
-                $page1++;
+            $page2 = $page + 1;
+            $page3 = $page - 1;
+            if ($page == 1) {
+                $firstdisable = "disabled";
+            } else {
+                $firstdisable = "enabled";
             }
+            if ($page == 2) {
+                $seconddisable = "disabled";
+            } else {
+                $seconddisable = "enabled";
+            }
+            if ($page == 1 || $page == 2 || $page == 3) {
+                $thirddisable = "disabled";
+            } else {
+                $thirddisable = "enabled";
+            }
+            if ($page >= $total_pages - 2) {
+                $lastdisable = "disabled";
+            } else {
+                $lastdisable = "enabled";
+            }
+            if ($page >= $total_pages - 1) {
+                $last1disable = "disabled";
+            } else {
+                $last1disable = "enabled";
+            }
+            if ($page == $total_pages || $page == 1) {
+                $last2disable = "disabled";
+            } else {
+                $last2disable = "enabled";
+            }
+
+            $usern = $_GET['user'];
+
+            $markup .= "<li class='page-item enabled'>
+                                         <a class='page-link' href=\"?user=$usern&page=$page1\">$page1</a>
+                                         </li>";
+            $markup .= "<li class='page-item " . $thirddisable . "'>
+                                         <a class='page-link " . $thirddisable . "'>...</a>
+                                         </li>";
+            $markup .= "<li class='page-item " . $firstdisable . "'>
+                                         <a class='page-link " . $firstdisable . " " . $seconddisable . "' href=\"?user=$usern&page=$page3\">$page3</a>
+                                         </li>";
+            $markup .= "<li class='page-item " . $last2disable . "'>
+                                         <a class='page-link " . $last2disable . "' href=\"?user=$usern&page=$page\">$page</a>
+                                         </li>";
+            $markup .= "<li class='page-item " . $last1disable . "'>
+                                         <a class='page-link " . $last1disable . "' href=\"?user=$usern&page=$page2\">$page2</a>
+                                         </li>";
+            $markup .= "<li class='page-item " . $lastdisable . "'>
+                                         <a class='page-link " . $lastdisable . "'>...</a>
+                                         </li>";
+            $markup .= "<li class='page-item enabled'>
+                                         <a class='page-link' href=\"?user=$usern&page=$total_pages\">$total_pages</a>
+                                         </li>";
             return $markup;
+
         }
-        $sql = "SELECT * FROM posts WHERE poster = '".$_GET['user']."' ORDER BY uploaddate DESC";
+        $sql = "SELECT * FROM posts WHERE poster = '".$_GET['user']."' ORDER BY uploaddate DESC LIMIT $offset, $size";
         $res_data = mysqli_query($conn, $sql)
         or die("Error: ".mysqli_error($conn));
         while ($row = mysqli_fetch_array($res_data)) {
@@ -218,7 +262,7 @@ if (isset($_SESSION['username'])) {
                             ";
         }
         ?>
-
+        <?php include_once 'userspaginav.php' ?>
     </center>
 
 </main>

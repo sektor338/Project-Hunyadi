@@ -24,7 +24,7 @@ body{
 }
 .navbara{
     color: #F8F8F8;
-    font-size: 25px;
+    font-size: 20px;
 }
 .navbarli{
     display: inline-block;
@@ -102,6 +102,8 @@ audio{
 
 .settingsnav{
     float: right;
+    width: 30px;
+    height: 30px;
 }
 
 .disabled{
@@ -152,6 +154,17 @@ audio{
     text-align:center;
 }
 
+    #chat{
+        position: fixed;
+        right: 40px;
+        bottom: 30px;
+    }
+
+#chatimg{
+    width: 50px;
+    height: 50px;
+}
+
 .footera{
     color: #F8F8F8;
 }
@@ -179,6 +192,11 @@ audio{
     }
     .settingsnav{
         float: none;
+    }
+}
+@media only screen and (max-width: 720px){
+    #chat{
+        display: none;
     }
 }
 @media only screen and (max-width: 550px) {

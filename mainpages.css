@@ -166,7 +166,7 @@
 }
 
 #postimg{
-    width: 700px;
+    width: 675px;
     max-height: 700px;
     height: auto;
 }
@@ -199,9 +199,10 @@
     float: left;
     text-align: left;
     width: auto;
+    min-width: 50px;
     height: auto;
     margin: 5px;
-    padding-left: 5px;
+    padding-left: 15px;
 }
 .titlea{
     color: #F8F8F8;
@@ -222,7 +223,7 @@
         font-size: 17px;
     }
     #postimg{
-        width: 500px;
+        width: 475px;
     }
     #postdiv{
         width: 520px;
@@ -267,6 +268,9 @@
         width: 630px;
         margin: 20px;
     }
+    #titlediv{
+        padding-left: 5px;
+    }
 }
 @media only screen and (max-width: 650px){
     #postimg{
@@ -280,6 +284,7 @@
     }
     #titlediv{
         margin-left: 0;
+        padding-left: 10px;
     }
     #postleft{
         margin-left: 0;
@@ -311,6 +316,9 @@
     #postright{
         float: none;
         margin: 5px;
+    }
+    #titlediv{
+        padding-left: 5px;
     }
 }
 @media only screen and (max-width: 400px) {

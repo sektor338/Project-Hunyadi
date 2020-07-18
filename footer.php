@@ -22,16 +22,16 @@
             <td class="footertd"><a class="footera" href="postsys.php">Post system</a></td>
         </tr>
         <tr class="footertr">
-            <td class="footertd"><a class="footera" href="https://github.com/sektor338/Project-Hunyadi">Github</a></td>
+            <td class="footertd"><a class="footera" href="https://github.com/sektor338/Project-Hunyadi" target='_blank'>Github</a></td>
             <td class="footertd"><a class="footera" href="https://www.stormfront.org/forum/" target='_blank'>Stormfront</a></td>
-            <td class="footertd"><a class="footera" href="contact.php">Contact Us</a></td>
+            <td class="footertd"><a class="footera" href="faq.php">FAQ</a></td>
             <td class="footertd"></td>
             <td class="footertd"><a class="footera" href="registersys.php">Register</a></td>
         </tr>
         <tr class="footertr">
             <td class="footertd"><a class="footera" href="supporters.php">Supporters</a></td>
             <td class="footertd"><a class="footera" target="_blank" href="https://icons8.com">Icons by Icons8</a></td>
-            <td class="footertd"><a class="footera" href="faq.php">FAQ</a></td>
+            <td class="footertd"></td>
             <td class="footertd"></td>
             <td class="footertd"><a class="footera" href="bookshelf.php">Bookshelf</a></td>
         </tr>
