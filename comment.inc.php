@@ -7,10 +7,24 @@ if(isset($_POST['Submit'])) {
     $comment = mysqli_real_escape_string($conn, $_POST['comment']);
     $post_id = $_POST['postid'];
     $cdate = date("Y-m-d H:i:s");
+    $notifitype = "comment";
+    $notifistatus = "unread";
     if(!preg_match("/<>/", $comment)){
         $sql = "INSERT INTO comments (post_id, comment_date, message, commenter)
         VALUES ('$post_id', '$cdate', '$comment', '$commenter')";
         mysqli_query($conn, $sql);
+        $sqlc = "SELECT poster FROM posts WHERE post_id='".$post_id."'";
+        $res_datac = mysqli_query($conn, $sqlc)
+        or die("Error: " . mysqli_error($conn));
+        $notificid = mysqli_fetch_array($res_datac);
+
+        $sqlc = "SELECT comment_id FROM comments WHERE post_id='".$post_id."' AND message='".$comment."' AND commenter='".$commenter."'";
+        $res_datac = mysqli_query($conn, $sqlc)
+        or die("Error: " . mysqli_error($conn));
+        $notific = mysqli_fetch_array($res_datac);
+        $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+                               VALUES ('".$commenter."', '".$notificid[0]."', '".$cdate."','". $notifitype."' ,'".$notific[0]."', '".$notifistatus."' )";
+        mysqli_query($conn, $sqlnotifi);
     }
 
 }
@@ -21,6 +35,8 @@ if (isset($_POST['dcomment_id'])) {
     if (mysqli_fetch_array($getcommentpoints)[0] == 0) {
         $sql = "DELETE FROM comments  WHERE comment_id = $commentid";
         mysqli_query($conn, $sql);
+        $sql = "DELETE FROM notifications  WHERE contentid = $commentid";
+        mysqli_query($conn, $sql);
     }
 }
 if (isset($_POST['caction'])) {
@@ -28,6 +44,8 @@ if (isset($_POST['caction'])) {
     $commenter1 = $_POST['commenter'];
     $cvoter =  $_SESSION['username'];
     $caction = $_POST['caction'];
+    $cvotedate = date("Y-m-d H:i:s");
+    $notifistatus = "unread";
     if ($commenter1 !== $cvoter) {
         switch ($caction) {
             case 'clike':
@@ -35,8 +53,16 @@ if (isset($_POST['caction'])) {
                 if (mysqli_fetch_array($crs1)[0]> 0) {
                     $sql = "DELETE FROM cvote  WHERE cpost_id = '".$commentid."' AND cvoter = '".$cvoter."'";
                     mysqli_query($conn,$sql);
+                    $sql = "DELETE FROM notifications  WHERE contentid = $commentid";
+                    mysqli_query($conn, $sql);
                 }
                 else {
+                    $notifitype = "clike";
+                    $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+                               VALUES ('".$cvoter."', '".$commenter1."', '".$cvotedate."','". $notifitype."' ,'".$commentid."', '".$notifistatus."' )";
+                    mysqli_query($conn, $sqlnotifi);
+
+
                     $sql = "INSERT INTO cvote (commenter, cpost_id, caction, cvoter)
                                VALUES ('".$commenter1."', '".$commentid."', '".$caction."', '".$cvoter."')
                                ON DUPLICATE KEY UPDATE caction='clike'";
@@ -53,8 +79,16 @@ if (isset($_POST['caction'])) {
                 if (mysqli_fetch_array($crs2)[0]> 0) {
                     $sql = "DELETE FROM cvote  WHERE cpost_id = '".$commentid."' AND cvoter = '".$cvoter."'";
                     mysqli_query($conn,$sql);
+                    $sql = "DELETE FROM notifications  WHERE contentid = $commentid";
+                    mysqli_query($conn, $sql);
                 }
                 else {
+                    $notifitype = "cdislike";
+                    $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+                               VALUES ('".$cvoter."', '".$commenter1."', '".$cvotedate."','". $notifitype."' ,'".$commentid."', '".$notifistatus."' )";
+                    mysqli_query($conn, $sqlnotifi);
+
+
                     $sql = "INSERT INTO cvote (commenter, cpost_id, caction, cvoter)
                                VALUES ('".$commenter1."', '".$commentid."', '".$caction."', '".$cvoter."')
                                ON DUPLICATE KEY UPDATE caction='cdislike'";

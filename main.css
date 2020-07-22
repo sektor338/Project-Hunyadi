@@ -30,14 +30,37 @@ body{
     display: inline-block;
     padding: 10px;
 }
-
-.navbarli:hover{
-    background-color: #515151;
+.badge {
+    position: absolute;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+.notifinav{
+    display: inline-block;
+    float: right;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    padding-top: 5px;
 }
 
+.settingsnav{
+    display: inline-block;
+    padding-top: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    float: right;
+    width: 30px;
+    height: 30px;
+}
+#bellicon{
+    transform: rotate(-20deg);
+}
 a{
-    padding: 10px;
-    margin: 0;
     text-decoration: none;
 }
 
@@ -100,11 +123,6 @@ audio{
     left: 10px;
 }
 
-.settingsnav{
-    float: right;
-    width: 30px;
-    height: 30px;
-}
 
 .disabled{
     display: none;
@@ -154,11 +172,11 @@ audio{
     text-align:center;
 }
 
-    #chat{
-        position: fixed;
-        right: 40px;
-        bottom: 30px;
-    }
+#chat{
+    position: fixed;
+    right: 40px;
+    bottom: 30px;
+}
 
 #chatimg{
     width: 50px;
@@ -172,7 +190,24 @@ audio{
     color: #00B2FF;
 }
 
+#friendaction{
+    width: 25px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 800px) {
+    .settingsnav{
+        display: block;
+        padding-top: 0;
+        padding-right: 0;
+        float: none;
+    }
+    .notifinav{
+        display: block;
+        padding-top: 0;
+        padding-right: 0;
+        float: none;
+    }
     .dropdownclass{
         display: block;
     }
@@ -189,9 +224,6 @@ audio{
     }
     #headerul{
         padding: 0;
-    }
-    .settingsnav{
-        float: none;
     }
 }
 @media only screen and (max-width: 720px){

@@ -1,11 +1,14 @@
 <?php
 include "dbh.inc.php";
 session_start();
+date_default_timezone_set('Europe/Budapest');
 if (isset($_POST['report'])) {
     $postid = $_POST['post_id'];
     $poster = $_POST['poster'];
     $reporter = $_SESSION['username'];
     $report = $_POST['report'];
+    $notifistatus = "unread";
+    $cvotedate = date("Y-m-d H:i:s");
     if ($poster != $reporter) {
         switch ($report) {
             case 'postreport':
@@ -19,7 +22,20 @@ if (isset($_POST['report'])) {
                     $updateuserreports = "UPDATE users SET userreport = (SELECT COUNT(*) FROM postreports WHERE poster = '" . $poster . "') WHERE name = '" . $poster . "'";
                     mysqli_query($conn, $updateuserreports);
                     $countpostreports = mysqli_query($conn, "SELECT COUNT(*) FROM postreports WHERE postid = '".$postid."'");
-                    mysqli_query($conn, $countpostreports);/*
+                    mysqli_query($conn, $countpostreports);
+
+                    $sqlc = "SELECT postreportid FROM postreports WHERE postid='".$postid."' AND reporter='".$reporter."'";
+                    $res_datac = mysqli_query($conn, $sqlc)
+                    or die("Error: " . mysqli_error($conn));
+                    $notifipostreport = mysqli_fetch_array($res_datac);
+
+
+                    $notifitype = "report";
+                    $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+                               VALUES ('".$reporter."', '".$poster."', '".$cvotedate."','". $notifitype."' ,'".$notifipostreport[0]."', '".$notifistatus."' )";
+                    mysqli_query($conn, $sqlnotifi);
+
+                    /*
                     $dcheckpostreport = mysqli_query($conn, "SELECT COUNT(*) FROM postreports WHERE postid = '" . $postid . "' AND reporter = '" . $reporter . "'");
                     if (mysqli_fetch_array($dcheckpostreport)[0] == 10) {
                         $deletepost = "DELETE FROM posts WHERE post_id = '".$postid."'";
@@ -37,7 +53,20 @@ if (isset($_POST['report'])) {
 
                     $updatecommentreports = "UPDATE comments SET creports = (SELECT COUNT(*) FROM commentreports WHERE commentid = '" . $postid . "') WHERE comment_id = '" . $postid . "'";
                     mysqli_query($conn, $updatecommentreports);
-/*
+
+                    $sqlc = "SELECT commentid FROM commentreports WHERE commentid='".$postid."' AND reporter='".$reporter."'";
+                    $res_datac = mysqli_query($conn, $sqlc)
+                    or die("Error: " . mysqli_error($conn));
+                    $notificreport = mysqli_fetch_array($res_datac);
+
+
+                    $notifitype = "commentreport";
+                    $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+                               VALUES ('".$reporter."', '".$poster."', '".$cvotedate."','". $notifitype."' ,'".$notificreport[0]."', '".$notifistatus."' )";
+                    mysqli_query($conn, $sqlnotifi);
+
+                    /*
+
                     $dcheckcommentreport = mysqli_query($conn, "SELECT COUNT(*) FROM commentreports WHERE commentid = '" . $postid . "' AND reporter = '" . $reporter . "'");
                     if (mysqli_fetch_array($dcheckcommentreport)[0] == 10) {
                         $deletecomment = "DELETE FROM comments WHERE comment_id = '".$postid."'";

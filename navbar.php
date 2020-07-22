@@ -14,12 +14,22 @@
         <li class="navbarli"><a href="fresh.php" class="navbara" id="fresh">Fresh</a></li>
         <?php
         if (isset($_SESSION['username'])) {
+            $sql = "SELECT COUNT(*) FROM notifications WHERE reciever='".$_SESSION['username']."' AND notifistatus='unread'";
+            $res_data = mysqli_query($conn, $sql)
+            or die("Error: " . mysqli_error($conn));
+            $notifinum = mysqli_fetch_array($res_data);
             echo '
 <li class="navbarli"><a href="upload.php" value="upload" class="navbara" id="upload">Upload</a></li>
                   <li style="padding:0; vertical-align:sub;" class="navbarli"><form action="logout.inc.php" method="post">
                         <button style="cursor: pointer; vertical-align:sub;" type="submit" id="logout" name="logout"><img style="width: 30px; height: 30px; padding:0; margin:0;" src="pictures/icons/logout.png" alt="logout"></button>
                   </form></li>
-                  <li class="navbarli settingsnav"><a class="navbara" href="/settings.php" style="padding:0; cursor: pointer; "><img style="width: 30px; height: 30px; padding:0; margin:0; " src="pictures/icons/settings.png" alt="settings"></a></li>';
+                  <li class="navbarli settingsnav"><a class="navbara" href="/settings.php" style="padding:0; cursor: pointer; "><img style="width: 30px; height: 30px; padding:0; margin:0; " src="pictures/icons/settings.png" alt="settings"></a></li>
+                  <li class="navbarli notifinav" onclick="notifidisp()">
+                  <a class="notification" style="padding:0; cursor: pointer; ">
+                        <img id="bellicon" style="width: 30px; height: 30px; padding:0; margin:0; " src="pictures/icons/notification.png" alt="notifi">
+                        <span class="badge">'.$notifinum[0].'</span>
+                  </a>
+                  </li>';
 
         } else {
             echo '
@@ -31,3 +41,4 @@
         ?>
     </ul>
 </nav>
+<?php require "notificationtab.php"?>

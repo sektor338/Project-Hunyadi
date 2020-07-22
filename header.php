@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once 'dbh.inc.php';
+date_default_timezone_set('Europe/Budapest');
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
@@ -17,6 +18,8 @@ include_once 'dbh.inc.php';
 <link href="https://fonts.googleapis.com/css?family=Germania+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mainpages.css">
 <link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="notificationtab.css">
+<script type="text/javascript" src="notificationtab.js"></script>
 <link rel="stylesheet" href="comment.css">
 <?php
 if (isset($_SESSION['username'])) {

@@ -1,0 +1,98 @@
+#notifitab{
+    background-color: #464646;
+    display: none;
+    margin: 20px;
+    width: 450px;
+    right: 20px;
+    float: right;
+    position: fixed;
+    height: 450px;
+    overflow: auto;
+    border-radius: 15px;
+    border-color: #F8F8F8;
+    border-style: solid;
+}
+#filtersdiv{
+    text-align: center;
+    width: auto;
+    display: block;
+    height: auto;
+}
+.notififiltersdiv{
+    display: inline-block;
+    width: 100px;
+    margin: 10px;
+    background-color: #27ae60;
+    padding: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.notififilters{
+    width: 50px;
+    color: #F8F8F8;
+
+}
+.notifidate{
+    color: #F8F8F8;
+    font-size: 15px;
+    float: right;
+}
+.notifications{
+    display: block;
+    margin: 10px 10px 10px 30px;
+}
+.leftnotifidiv{
+    display: inline-block;
+}
+.notifipic{
+    width: 60px;
+}
+.rightnotifidiv{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.notifiname{
+    display: inline;
+    color: #00B2FF;
+    font-size: 20px;
+
+}
+.notifitext{
+    display: inline;
+    color: #F8F8F8;
+    font-size: 20px;
+}
+.friendnotifi{
+    text-align: center;
+    margin: 5px 5px 5px 0;
+}
+.friendnotifibtn{
+    margin: 5px 5px 5px 0;
+    padding: 5px;
+    width: 90px;
+    cursor: pointer;
+    color: #F8F8F8;
+    font-size: 20px;
+    border-radius: 15px;
+    border-style: none;
+}
+.acceptbtn{
+    background-color: #27ae60;
+}
+.denybtn{
+    background-color: red;
+}
+.blockbtn{
+    background-color: darkred;
+}
+
+.acceptbtn:hover{
+    background-color: #64D714;
+}
+.denybtn:hover{
+    background-color:  #F66161;
+}
+.blockbtn:hover{
+    background-color: #A50505;
+}

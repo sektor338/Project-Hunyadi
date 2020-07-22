@@ -20,7 +20,7 @@ if (isset($_SESSION['username'])) {
                                       <a id='username' href='profile.php'>";
     echo $_SESSION['username'];
     echo "</a>
-                                      <a id='userpoints'>";
+    <a id='userpoints'>";
     $sql = "SELECT points FROM users WHERE name = '".$_SESSION['username']."'";
     $sqlrs = mysqli_query($conn, $sql);
     $sqlresult = mysqli_fetch_array($sqlrs)[0];

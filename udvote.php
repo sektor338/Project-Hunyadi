@@ -13,6 +13,8 @@ if (!isset($_SESSION['username'])) {
         $poster = $_POST['poster'];
         $voter =  $_SESSION['username'];
         $action = $_POST['action'];
+        $cvotedate = date("Y-m-d H:i:s");
+        $notifistatus = "unread";
         if ($poster !== $voter) {
             switch ($action) {
                 case 'like':
@@ -22,6 +24,10 @@ if (!isset($_SESSION['username'])) {
                         mysqli_query($conn,$sql);
                     }
                     else {
+                        $notifitype = "plike";
+                        $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+                               VALUES ('".$voter."', '".$poster."', '".$cvotedate."','". $notifitype."' ,'".$postid."', '".$notifistatus."' )";
+                        mysqli_query($conn, $sqlnotifi);
                         $sql = "INSERT INTO vote (poster, post_id, action, voter)
                                VALUES ('".$poster."', '".$postid."', '".$action."', '".$voter."')
                                ON DUPLICATE KEY UPDATE action='like'";
@@ -40,6 +46,9 @@ if (!isset($_SESSION['username'])) {
                         mysqli_query($conn,$sql);
                     }
                     else {
+                        $notifitype = "pdislike";
+                        $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+                               VALUES ('".$voter."', '".$poster."', '".$cvotedate."','". $notifitype."' ,'".$postid."', '".$notifistatus."' )";
                         $sql = "INSERT INTO vote (poster, post_id, action, voter)
                                VALUES ('".$poster."', '".$postid."', '".$action."', '".$voter."')
                                ON DUPLICATE KEY UPDATE action='dislike'";
