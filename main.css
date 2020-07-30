@@ -130,7 +130,25 @@ audio{
     left: 10px;
 }
 
-
+.titleinput{
+    background-color: gray;
+    max-width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    color: #F8F8F8;
+}
+.titlesubmit{
+    background-color: gray;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #F8F8F8;
+}
 .disabled{
     display: none;
     width: 0;
