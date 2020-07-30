@@ -1,4 +1,7 @@
-<div id="notifitab">
+<link rel="stylesheet" href="notificationtab.css">
+<script type="text/javascript" src="friend.js"></script>
+<script type="text/javascript" src="notificationtab.js"></script>
+<div id="notifitab" onmouseleave="closenotifitab()" class="<?php echo $_SESSION['username']?>">
     <div id="filtersdiv">
         <div id="ffilter" class="notififiltersdiv" onclick="filterf()">
             <a class="notififilters">Friend requests</a>
@@ -19,15 +22,24 @@ $sql = "SELECT * FROM notifications WHERE reciever='".$_SESSION['username']."' O
 $res_data = mysqli_query($conn, $sql)
 or die("Error: " . mysqli_error($conn));
 while ($row = mysqli_fetch_array($res_data)) {
+    $sql = "SELECT * FROM users WHERE name = '" . $row["sender"] . "'";
+    $userrs = mysqli_query($conn, $sql);
+    $user = mysqli_fetch_array($userrs);
+    if ($user['profile_pic'] == "trans.png") {
+        $dest = "pictures/ranks and insignia/Sleeve(parka)";
+    } else {
+        $dest = "pictures/profile pictures";
+    }
+    $fulldest = $dest . "/" . $user['profile_pic'];
     if ($row['notifitype'] == "plike"){
         echo '
         <div class="notifications notifivotes">
         <hr>
         <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+                <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><p class="notifitext">liked your post.</p>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a href="post.php?postid='.$row["contentid"].'" class="notifitext">liked your post.</a>
         </div>
     </div>';
     }
@@ -36,46 +48,55 @@ while ($row = mysqli_fetch_array($res_data)) {
         <div class="notifications notifivotes">
         <hr>
         <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+                <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'>'.$row["sender"].' </a><p class="notifitext">disliked your post.</p>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'>'.$row["sender"].' </a><a href="post.php?postid='.$row["contentid"].'" class="notifitext">disliked your post.</a>
         </div>
     </div>';
     }
     elseif ($row['notifitype'] == "cdislike"){
+        $sqlc = "SELECT * FROM comments WHERE comment_id='".$row['contentid']."'";
+        $resc = mysqli_query($conn, $sqlc);
+        $rssql = mysqli_fetch_array($resc);
         echo '
         <div class="notifications notifivotes">
         <hr>
         <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+                <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><p class="notifitext">disliked your comment.</p>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a href="post.php?postid='.$row["contentid"].'" class="notifitext" href="post.php?postid='.$rssql["post_id"].'">disliked your comment.</a>
         </div>
     </div>';
     }
     elseif ($row['notifitype'] == "clike"){
+        $sqlc = "SELECT * FROM comments WHERE comment_id='".$row['contentid']."'";
+        $resc = mysqli_query($conn, $sqlc);
+        $rssql = mysqli_fetch_array($resc);
         echo '
         <div class="notifications notifivotes">
          <hr>
         <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+                <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><p class="notifitext">liked your comment.</p>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a class="notifitext" href="post.php?postid='.$rssql["post_id"].'">liked your comment.</a>
         </div>
     </div>';
     }
     elseif ($row['notifitype'] == "comment"){
+        $sqlc = "SELECT * FROM comments WHERE comment_id='".$row['contentid']."'";
+        $resc = mysqli_query($conn, $sqlc);
+        $rssql = mysqli_fetch_array($resc);
         echo '
         <div class="notifications notificomments">
         <hr>
         <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+                <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><p class="notifitext">commented your post.</p>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a href="post.php?postid='.$rssql["post_id"].'" class="notifitext">commented your post.</a>
         </div>
     </div>';
     }
@@ -84,10 +105,10 @@ while ($row = mysqli_fetch_array($res_data)) {
         <div class="notifications notifireport">
         <hr>
         <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+                <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><p class="notifitext">reported your commented.</p>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a class="notifitext">reported your commented.</a>
         </div>
     </div>';
     }
@@ -96,81 +117,35 @@ while ($row = mysqli_fetch_array($res_data)) {
         <div class="notifications notifireport">
         <hr>
         <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+                <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><p class="notifitext">reported your post.</p>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a href="post.php?postid='.$row["contentid"].'" class="notifitext">reported your post.</a>
         </div>
     </div>';
     }
-    }
-    ?>
-   <!-- <div class="notifications notififriend">
+    elseif ($row['notifitype'] == "friendreq"){
+        $sql = "SELECT status FROM friend_request WHERE friendrid='".$row['contentid']."'";
+        $sqlr1 = mysqli_query($conn, $sql);
+        $sqlrs1 = mysqli_fetch_row($sqlr1);
+        if ($sqlrs1[0] != "accepted"){
+            echo '
+        <div class="notifications notififriend">
+        <hr>
         <div class="leftnotifidiv">
-            <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
+            <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-            <a class="notifiname" href="users.php?user=sektor338">sektor338 </a><p class="notifitext">wants to be your friend.</p>
+            <a class="notifiname" href="users.php?user=sektor338">'.$row['sender'].' </a><a class="notifitext">wants to be your friend.</a>
             <div class="friendnotifi">
-                <button class="friendnotifibtn acceptbtn">Accept</button>
-                <button class="friendnotifibtn denybtn">Deny</button>
-                <button class="friendnotifibtn blockbtn">Block</button>
+                <button class="friendnotifibtn acceptbtn" name="'.$row['contentid'].'" onclick="faccept()">Accept</button>
+                <button class="friendnotifibtn denybtn" name="'.$row['contentid'].'" onclick="fdeny()">Deny</button>
+                <button class="friendnotifibtn blockbtn" name="'.$row['contentid'].'" onclick="fblock()">Block</button>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="notifications">
-        <div class="leftnotifidiv">
-                <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
-        </div>
-        <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user=sektor338">sektor338 </a><p class="notifitext">has liked your post.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="notifications">
-        <div class="leftnotifidiv">
-            <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
-        </div>
-        <div class="rightnotifidiv">
-            <a class="notifiname" href="users.php?user=sektor338">sektor338 </a><p class="notifitext">has disliked your post.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="notifications">
-        <div class="leftnotifidiv">
-            <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
-        </div>
-        <div class="rightnotifidiv">
-            <a class="notifiname" href="users.php?user=sektor338">sektor338 </a><p class="notifitext">has liked your comment.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="notifications">
-        <div class="leftnotifidiv">
-            <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
-        </div>
-        <div class="rightnotifidiv">
-            <a class="notifiname" href="users.php?user=sektor338">sektor338 </a><p class="notifitext">has disliked your comment.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="notifications">
-        <div class="leftnotifidiv">
-            <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
-        </div>
-        <div class="rightnotifidiv">
-            <a class="notifiname" href="users.php?user=sektor338">sektor338 </a><p class="notifitext">has commented your post.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="notifications">
-        <div class="leftnotifidiv">
-            <img class="notifipic" src="pictures/profile%20pictures/sektor338.png" alt="profpic">
-        </div>
-        <div class="rightnotifidiv">
-            <a class="notifiname" href="users.php?user=sektor338">sektor338 </a><p class="notifitext">has reported your post.</p>
-        </div>
-    </div>
-    <hr>-->
+    </div>';
+        }
+    }
+    }
+    ?>
 </div>

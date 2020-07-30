@@ -22,6 +22,8 @@ if (!isset($_SESSION['username'])) {
                     if (mysqli_fetch_array($rs1)[0]> 0) {
                         $sql = "DELETE FROM vote  WHERE post_id = '".$postid."' AND voter = '".$voter."'";
                         mysqli_query($conn,$sql);
+                        $sql = "DELETE FROM notifications  WHERE contentid = '".$postid."'";
+                        mysqli_query($conn, $sql);
                     }
                     else {
                         $notifitype = "plike";
@@ -44,6 +46,8 @@ if (!isset($_SESSION['username'])) {
                     if (mysqli_fetch_array($rs2)[0]> 0) {
                         $sql = "DELETE FROM vote  WHERE post_id = '".$postid."' AND voter = '".$voter."'";
                         mysqli_query($conn,$sql);
+                        $sql = "DELETE FROM notifications  WHERE contentid = '".$postid."'";
+                        mysqli_query($conn, $sql);
                     }
                     else {
                         $notifitype = "pdislike";

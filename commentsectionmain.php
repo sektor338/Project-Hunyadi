@@ -31,57 +31,63 @@ while ($commentrow = mysqli_fetch_array($commentres_data)) {
                 </div>
             </div>
             </div>
-        <div class='commentsbottom'>
-            <img class='".$commentrow['comment_id']." cupvote' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='cupvotef()' src='";
-    if (!isset($_SESSION['username'])) {
-        echo "pictures/icons/upvoteb.png";
-    }
-    else {
-        $rs1 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND cvoter = '".$_SESSION['username']."'");
-        if (mysqli_fetch_array($rs1)[0]> 0) {
-            $rs2 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND caction = 'like' AND cvoter = '".$_SESSION['username']."'");
-            if (mysqli_fetch_array($rs2)[0]> 0) {
-                echo "pictures/icons/upvoteg.png";
-            }
-            else {
+        <div class='commentsbottom'>";
+    if (isset($_SESSION['username'])){
+        if ($_SESSION['username'] != $commentrow['commenter']){
+            echo "<img class='".$commentrow['comment_id']." cupvote' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='cupvotef()' src='";
+            if (!isset($_SESSION['username'])) {
                 echo "pictures/icons/upvoteb.png";
             }
-        }
-        else {
-            echo "pictures/icons/upvoteb.png";
-        }
-    }
-    echo "'> <img class='".$commentrow['comment_id']." cdownvote' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='cdownvotef()' src='";
-
-    if (!isset($_SESSION['username'])) {
-        echo "pictures/icons/downvoteb.png";
-    }
-    else {
-        $rs3 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND cvoter = '".$_SESSION['username']."'");
-        if (mysqli_fetch_array($rs3)[0]> 0) {
-            $rs4 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND caction = 'dislike' AND cvoter = '".$_SESSION['username']."'");
-            if (mysqli_fetch_array($rs4)[0]> 0) {
-                echo "pictures/icons/downvoteg.png";
-            }
             else {
+                $rs1 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND cvoter = '".$_SESSION['username']."'");
+                if (mysqli_fetch_array($rs1)[0]> 0) {
+                    $rs2 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND caction = 'like' AND cvoter = '".$_SESSION['username']."'");
+                    if (mysqli_fetch_array($rs2)[0]> 0) {
+                        echo "pictures/icons/upvoteg.png";
+                    }
+                    else {
+                        echo "pictures/icons/upvoteb.png";
+                    }
+                }
+                else {
+                    echo "pictures/icons/upvoteb.png";
+                }
+            }
+            echo "'> <img class='".$commentrow['comment_id']." cdownvote' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='cdownvotef()' src='";
+
+            if (!isset($_SESSION['username'])) {
                 echo "pictures/icons/downvoteb.png";
             }
+            else {
+                $rs3 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND cvoter = '".$_SESSION['username']."'");
+                if (mysqli_fetch_array($rs3)[0]> 0) {
+                    $rs4 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND caction = 'dislike' AND cvoter = '".$_SESSION['username']."'");
+                    if (mysqli_fetch_array($rs4)[0]> 0) {
+                        echo "pictures/icons/downvoteg.png";
+                    }
+                    else {
+                        echo "pictures/icons/downvoteb.png";
+                    }
+                }
+                else {
+                    echo "pictures/icons/downvoteb.png";
+                }
+            }echo "'>";
+            $checkreportedcomments = mysqli_query($conn, "SELECT COUNT(*) FROM commentreports WHERE commentid = '".$commentrow['comment_id']."' AND reporter = '".$_SESSION['username']."'");
+            if (mysqli_fetch_array($checkreportedcomments)[0] == 0 && $commentrow['commenter'] != $_SESSION['username']) {
+                echo "<img class='".$commentrow['comment_id']." commentsbottombuttons' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='creportf()' src='pictures/icons/report.png'>";
+            }
         }
-        else {
-            echo "pictures/icons/downvoteb.png";
-        }
-    }echo "'>";
-    $checkreportedcomments = mysqli_query($conn, "SELECT COUNT(*) FROM commentreports WHERE commentid = '".$commentrow['comment_id']."' AND reporter = '".$_SESSION['username']."'");
-    if (mysqli_fetch_array($checkreportedcomments)[0] == 0 && $commentrow['commenter'] != $_SESSION['username']) {
-        echo "<img class='".$commentrow['comment_id']." commentsbottombuttons' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='creportf()' src='pictures/icons/report.png'>";
-    }
-    if ($commentrow['commenter'] == $_SESSION['username']){
-        echo "<img style='cursor: pointer;' id='".$commentrow['comment_id']."' class='".$commentrow['post_id']." commentsupperrightupedit' src='pictures/icons/edit.png' alt='editb' onclick='ceditdisplay()'>
+        else{
+            echo "<img style='cursor: pointer;' id='".$commentrow['comment_id']."' class='".$commentrow['post_id']." commentsupperrightupedit' src='pictures/icons/edit.png' alt='editb' onclick='ceditdisplay()'>
                         <img style='cursor: pointer;' id='".$commentrow['comment_id']."' class='".$commentrow['post_id']." commentsupperrightupdelete' src='pictures/icons/delete.png' alt='deleteb' onclick='cdelete()'>";
+        }
     }
 
 
-    echo "<hr> </div></div>";
+
+
+    echo " </div><hr></div>";
 }
 echo "
         

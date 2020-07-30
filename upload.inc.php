@@ -2,8 +2,8 @@
 date_default_timezone_set('Europe/Budapest');
 include "dbh.inc.php";
 if (isset($_POST['upload'])){
-    $title = $_POST['title'];
-    $tags = $_POST['tags'];
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $tags = mysqli_real_escape_string($conn, $_POST['tags']);
     $postdate = date("Y-m-d H:i:s");
     $points = 0;
     $user = $_POST['usname'];

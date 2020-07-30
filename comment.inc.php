@@ -17,14 +17,15 @@ if(isset($_POST['Submit'])) {
         $res_datac = mysqli_query($conn, $sqlc)
         or die("Error: " . mysqli_error($conn));
         $notificid = mysqli_fetch_array($res_datac);
-
-        $sqlc = "SELECT comment_id FROM comments WHERE post_id='".$post_id."' AND message='".$comment."' AND commenter='".$commenter."'";
-        $res_datac = mysqli_query($conn, $sqlc)
-        or die("Error: " . mysqli_error($conn));
-        $notific = mysqli_fetch_array($res_datac);
-        $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
+        if ($notificid[0] != $_SESSION['username']){
+            $sqlc = "SELECT comment_id FROM comments WHERE post_id='".$post_id."' AND message='".$comment."' AND commenter='".$commenter."'";
+            $res_datac = mysqli_query($conn, $sqlc)
+            or die("Error: " . mysqli_error($conn));
+            $notific = mysqli_fetch_array($res_datac);
+            $sqlnotifi = "INSERT INTO notifications (sender, reciever, notifidate, notifitype, contentid, notifistatus)
                                VALUES ('".$commenter."', '".$notificid[0]."', '".$cdate."','". $notifitype."' ,'".$notific[0]."', '".$notifistatus."' )";
-        mysqli_query($conn, $sqlnotifi);
+            mysqli_query($conn, $sqlnotifi);
+        }
     }
 
 }

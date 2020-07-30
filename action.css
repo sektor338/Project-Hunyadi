@@ -12,11 +12,12 @@ body{
 
 #thankp{
     font-size: 60px;
+    color: #27ae60;
 }
 
 #front{
     font-size: 40px;
-    color: black;
+    color: #F8F8F8;
     text-decoration: none;
 }
 

@@ -27,6 +27,7 @@
         <div id="title">
             <a id="titlea">People who support us</a>
         </div>
+        <br>
         <div id="maindiv">
                 <?php
                 include_once 'dbh.inc.php';
@@ -35,14 +36,14 @@
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<hr>
                                     <div class='patronsdiv'>
-                                       <div class='tdname partdiv'><a class='namea' href='users.php?user=".$row['name']."'>".$row['name']."</a></div>
+                                       <div class='name partdiv'><a class='namea' href='users.php?user=".$row['name']."'>".$row['name']."</a></div>
                                        <div class='tdcollar partdiv'><img class='collar_badges' src='".$row['collar_badges']."' alt='collar_badges'></div>
                                        <div class='tdsleeves partdiv'><img class='shoulder_straps' src='".$row['shoulder_straps']."' alt='shoulder_straps'></div>
                                        <div class='tdparka partdiv'><img class='parka' src='".$row['parka']."' alt='parka'></div>
-                                       <div class='tdbadge partdiv'><img class='badge' src='".$row['patreon']."' alt='badge'></div>
+                                       <div class='tdbadge partdiv'><img class='reward' src='".$row['patreon']."' alt='badge'></div>
                                        <div class='tdpoints partdiv'><a class='pointa'>".$row['points']."</a></div>
                                    </div>
-                                   <hr>
+                                   <hr><br>
                                    ";
                 }
                 ?>

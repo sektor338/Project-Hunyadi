@@ -1,13 +1,7 @@
 #notifitab{
     background-color: #464646;
-    display: none;
     margin: 20px;
-
-    width: 450px;
-    right: 20px;
-    float: right;
-    position: fixed;
-    height: 450px;
+    height: auto;
     overflow: auto;
     border-radius: 15px;
     border-color: #F8F8F8;
@@ -21,7 +15,7 @@
 }
 .notififiltersdiv{
     display: inline-block;
-    width: 100px;
+    width: 130px;
     margin: 10px;
     background-color: #27ae60;
     padding: 5px;
@@ -30,6 +24,7 @@
 }
 .notififilters{
     width: 50px;
+    font-size: 20px;
     color: #F8F8F8;
 
 }
@@ -40,7 +35,7 @@
 }
 .notifications{
     display: block;
-    margin: 10px 10px 10px 30px;
+    margin: 0;
 }
 .leftnotifidiv{
     display: inline-block;
@@ -96,4 +91,12 @@
 }
 .blockbtn:hover{
     background-color: #A50505;
+}
+@media only screen and (max-width: 400px){
+    .rightnotifidiv{
+        display: block;
+    }
+    .notififilters{
+        font-size: 20px;
+    }
 }

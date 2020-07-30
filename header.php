@@ -18,19 +18,22 @@ date_default_timezone_set('Europe/Budapest');
 <link href="https://fonts.googleapis.com/css?family=Germania+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mainpages.css">
 <link rel="stylesheet" href="main.css">
-<link rel="stylesheet" href="notificationtab.css">
-<script type="text/javascript" src="notificationtab.js"></script>
 <link rel="stylesheet" href="comment.css">
 <?php
 if (isset($_SESSION['username'])) {
     echo '<script type="text/javascript" src="like.js"></script>';
     echo '<script type="text/javascript" src="comment.js"></script>';
+    echo '<script type="text/javascript" src="postaction.js"></script>';
+    echo '<script type="text/javascript" src="notification.js"></script>';
     if ($_SESSION['username'] == "LySS"){
         header("Location: auschwitz.php");
     }
 }
 
 ?>
+<!--
+<link href="https://vjs.zencdn.net/7.8.3/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/7.8.3/video.js"></script>-->
 <script src="dropdown.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

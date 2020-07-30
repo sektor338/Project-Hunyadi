@@ -1,5 +1,5 @@
 #titlea{
-    font-size: 30px;
+    font-size: 60px;
     display: block;
     color: #27ae60;
     margin: 2px;
@@ -7,11 +7,15 @@
 main{
     margin-bottom: 268px;
 }
+#friendaction{
+    width: 40px;
+    margin: 5px;
+}
 .navbara{
     color: #F8F8F8;
 }
 .partdiv{
-    width: auto;
+    width: 150px;
     display: block;
 }
 .footera{
@@ -26,50 +30,41 @@ main{
 }
 
 .patronsdiv{
-    width: auto;
     display: block;
+    width: auto;
     margin: 10px;
     padding: 5px;
 }
 
 .name{
-    width: auto;
-    min-width: 150px;
+    width: 400px;
     display: block;
     margin: 5px;
     vertical-align: top;
 }
 
 .tdcollar{
-    width: auto;
     display: block;
     margin: 5px;
-    min-width: 100px;
 }
 
 .tdsleeves{
-    width: auto;
     display: block;
     margin: 5px;
-    min-width: 100px;
 }
 
 .tdparka{
-    width: auto;
     display: block;
     margin: 5px;
-    min-width: 100px;
 }
 
 .tdbadge{
-    width: auto;
     display: block;
     margin: 5px;
     min-width: 100px;
 }
 
 .tdpoints{
-    width: auto;
     display: block;
     margin: 5px;
     min-width: 20px;
@@ -105,17 +100,48 @@ main{
     font-size: 50px;
     color: #F8F8F8;
 }
+@media only screen and (max-width: 1450px){
+    .namea{
+        font-size: 35px;
+    }
+    .name{
+        width: 350px;
+    }
+    .pointa{
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 1365px){
+    .tdpoints{
+        width: 100px;
+    }
+    .frienddiv{
+        width: 150px;
+    }
+    .tdparka{
+        width: 60px;
+    }
+}
 @media only screen and (max-width: 500px){
     .namea{
         font-size: 30px;
     }
+    .name{
+        width: 250px;
+    }
     .pointa{
         font-size: 30px;
+    }
+    .partdiv{
+        width: 250px;
+    }
+    #titlea{
+        font-size: 50px;
     }
 }
 @media only screen and (min-width: 1066px) {
     #titlea{
-        font-size: 60px;
+        font-size: 80px;
     }
 
     .partdiv{
@@ -134,7 +160,6 @@ main{
         display: inline-block;
         vertical-align: middle;
     }
-    
     .tdcollar{
         display: inline-block;
     }

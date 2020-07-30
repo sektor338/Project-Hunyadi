@@ -5,6 +5,7 @@ include_once 'dbh.inc.php';
 <html lang="en">
 <head>
     <?php include 'header.php';?>
+    <script type="text/javascript" src="postaction.js"></script>
 </head>
 <body>
 <?php include 'navbar.php'; ?>
@@ -79,8 +80,8 @@ include_once 'dbh.inc.php';
                      while ($row = mysqli_fetch_array($res_data)) {
                          echo "
                             <div class='".$row['post_id']."' id='postdiv'>
-                                <div id='titlediv'>
-                                    <a class='titlea' href='post.php?postid=".$row['post_id']."'>".$row['title']."</a>
+                                <div class='".$row['post_id']." titlediv'>
+                                    <a class='".$row['post_id']." titlea' href='post.php?postid=".$row['post_id']."'>".$row['title']."</a>
                                 </div>";
 
 if (strtolower(substr($row['image'], -3)) == "mp4" || strtolower(substr($row['image'], -4)) == "webm" || strtolower(substr($row['image'], -3)) == "mov") {
@@ -100,50 +101,9 @@ else {
 <a class='postpoints' id='".$row['post_id']."' style='height: 35px; width: 35px; vertical-align:super; font-size:25px;'>".$row['points']."</a>
 
 
-<img class='".$row['post_id']." upvote' name='".$row['poster']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='upvotef()' src='";
-            if (!isset($_SESSION['username'])) {
-                echo "pictures/icons/upvoteb.png";
-            }
-            else {
-                $rs1 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '".$row['post_id']."' AND voter = '".$_SESSION['username']."'");
-                if (mysqli_fetch_array($rs1)[0]> 0) {
-                    $rs2 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '".$row['post_id']."' AND action = 'like' AND voter = '".$_SESSION['username']."'");
-                    if (mysqli_fetch_array($rs2)[0]> 0) {
-                        echo "pictures/icons/upvoteg.png";
-                    }
-                    else {
-                        echo "pictures/icons/upvoteb.png";
-                    }
-                }
-                else {
-                    echo "pictures/icons/upvoteb.png";
-                }
-            }
-            echo "'>
+<img id='postedit' class='".$row['post_id']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='postedit()' src='pictures/icons/edit.png'>
 
-
-
-<img class='".$row['post_id']." downvote' name='".$row['poster']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='downvotef()' src='";
-
-            if (!isset($_SESSION['username'])) {
-                echo "pictures/icons/downvoteb.png";
-            }
-            else {
-                $rs3 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '".$row['post_id']."' AND voter = '".$_SESSION['username']."'");
-                if (mysqli_fetch_array($rs3)[0]> 0) {
-                    $rs4 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '".$row['post_id']."' AND action = 'dislike' AND voter = '".$_SESSION['username']."'");
-                    if (mysqli_fetch_array($rs4)[0]> 0) {
-                        echo "pictures/icons/downvoteg.png";
-                    }
-                    else {
-                        echo "pictures/icons/downvoteb.png";
-                    }
-                }
-                else {
-                    echo "pictures/icons/downvoteb.png";
-                }
-            }
-            echo "'>
+<img id='postdelete' class='".$row['post_id']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='postdelete()' src='pictures/icons/delete.png'>
 
 <img style='cursor: pointer; height: 35px; width: 35px;' class='".$row['post_id']." comment' onclick='commentsf()' src='pictures/icons/comments.png' alt='comments'>";
                          if(isset($_SESSION['username'])){
@@ -202,7 +162,12 @@ echo "
                      }
                       ?>
 
-<?php include_once 'paginationnav.php'?>
+                      <?php
+                      if ($total_pages != 0){
+                          include_once 'userspaginav.php';
+                      }
+
+                      ?>
     </center>
 
 </main>

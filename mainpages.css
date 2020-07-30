@@ -27,7 +27,7 @@
     color: white;
     max-width: 450px;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 #announcementsp{
     margin: 15px;
@@ -42,7 +42,7 @@
     height: 400px;
     float: left;
     text-align: justify;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     display: block;
     padding: 10px;
@@ -52,7 +52,7 @@
     background-color: #464646;
     width: 400px;
     height: 400px;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     display: block;
     padding: 10px;
@@ -143,13 +143,13 @@
 }
 #postleft{
     float: left;
-    margin-left: 15px;
+    margin-left: 23px;
     margin-top: 3px;
 }
 
 #postright{
     float: right;
-    margin-right: 15px;
+    margin-right: 23px;
     margin-top: 3px;
 }
 
@@ -169,6 +169,7 @@
     width: 675px;
     max-height: 700px;
     height: auto;
+    display: block;
 }
 
 #postdiv{
@@ -176,7 +177,7 @@
     width: 720px;
     margin: 20px;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     display: block;
     padding: 5px;
@@ -194,7 +195,7 @@
     margin: 5px;
 }
 
-#titlediv{
+.titlediv{
     font-size: 25px;
     float: left;
     text-align: left;
@@ -220,7 +221,7 @@
         max-width: 350px;
     }
     #announcementsp{
-        font-size: 17px;
+        font-size: 20px;
     }
     #postimg{
         width: 475px;
@@ -239,25 +240,30 @@
     #topusers{
         max-width: 300px;
     }
-    .consider{
-        font-size: 15px;
-    }
-    #supportersa{
-        font-size: 20px;
-    }
-    #topusername{
-        font-size: 17px;
-    }
-    .topuserpoints{
-        font-size: 17px;
-    }
 }
 @media only screen and (max-width: 720px){
+    #postleft{
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+    #postright{
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
     #userdiv{
-        display: none;
+        display: block;
+        float: none;
+        margin: 30px auto;
+        height: auto;
     }
     #topusers{
-        display: none;
+        display: block;
+        float: none;
+        margin: 30px auto;
+    }
+    .rightdiv{
+        float: none;
+        margin: auto;
     }
     #postimg{
         width: 610px;
@@ -268,26 +274,21 @@
         width: 630px;
         margin: 20px;
     }
-    #titlediv{
+    .titlediv{
         padding-left: 5px;
     }
 }
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 680px){
     #postimg{
         width: 480px;
     }
     #postdiv{
         width: 500px;
-    }
-    #postdiv{
         margin: 10px;
     }
-    #titlediv{
+    .titlediv{
         margin-left: 0;
         padding-left: 10px;
-    }
-    #postleft{
-        margin-left: 0;
     }
 }
 @media only screen and (max-width: 580px) {
@@ -308,6 +309,7 @@
     #postdiv{
         width: 100%;
         margin: 25px 0;
+        border-radius: 0;
     }
     #postleft{
         float: none;
@@ -317,8 +319,11 @@
         float: none;
         margin: 5px;
     }
-    #titlediv{
+    .titlediv{
         padding-left: 5px;
+    }
+    #announcements{
+        border-radius: 0;
     }
 }
 @media only screen and (max-width: 400px) {
@@ -328,4 +333,16 @@
     .navbara{
         font-size: 15px;
     }
+    #userdiv{
+        width: auto;
+    }
+    #topusers{
+        width: auto;
+    }
+}
+@media only screen and (max-width: 325px) {
+   #patreon{
+       width: 250px;
+       height: 100px;
+   }
 }

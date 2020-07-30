@@ -7,6 +7,7 @@ if ($_GET['user'] == '') {
 <html lang="en">
 <head>
     <?php include 'header.php'; ?>
+    <script type="text/javascript" src="friend.js"></script>
 </head>
 <body>
 <?php include 'navbar.php'; ?>
@@ -41,21 +42,21 @@ if ($_GET['user'] == '') {
                                                       <a id='userpoints'>";
         echo $user['points'];
         echo "</a>";
+        if (isset($_SESSION['username'])){
         $sqlfr = "SELECT * FROM friend_request WHERE sender = '" . $_SESSION['username'] . "' AND reciever = '" . $user['name'] . "'  OR reciever = '" . $_SESSION['username'] . "' AND sender = '" . $user['name'] . "'";
         $sqlrsfr = mysqli_query($conn, $sqlfr);
         $friendsql = mysqli_fetch_array($sqlrsfr);
-        if ($_SESSION['username'] != $user['name']){
-            if ($friendsql[0] == 0) {
-
-                echo "<img id='friendaction' src='pictures/icons/addf.png' alt='addfriend'>";
-            }
-            else{
-                if ($friendsql['status'] == "friend"){
-                    echo "<img id='friendaction' src='pictures/icons/delete.png' alt='deletefriend'>";
-                    echo "<img id='friendaction' src='pictures/icons/block.png' alt='block'>";
+        if ($_SESSION['username'] != $user['name']) {
+            if ($friendsql[0] == 0 && $friendsql['status'] != "blocked") {
+                echo "<img id='friendaction' class='" . $_SESSION['username'] . "' onclick='friendreq()' src='pictures/icons/addf.png' alt='addfriend'>";
+            } else {
+                if ($friendsql['status'] == "accepted") {
+                    echo "<img id='friendaction' class='friendbtns' src='pictures/icons/deletef.png' name='" . $friendsql['friendrid'] . "' onclick='fudeny()' alt='deletefriend'>";
+                    echo "<img id='friendaction' class='friendbtns' src='pictures/icons/block.png' name='" . $friendsql['friendrid'] . "' onclick='fublock()' alt='block'>";
                 }
             }
         }
+    }
 
         echo "</div>
                                                 <div id='sleeves_div'>
@@ -171,8 +172,8 @@ if ($_GET['user'] == '') {
         while ($row = mysqli_fetch_array($res_data)) {
             echo "
                             <div class='maindiv " . $row['post_id'] . "' id='postdiv'>
-                                <div id='titlediv'>
-                                    <a class='titlea' href='post.php?postid=" . $row['post_id'] . "'>" . $row['title'] . "</a>
+                                <div class='".$row['post_id']." titlediv'>
+                                    <a class='".$row['post_id']." titlea' href='post.php?postid=" . $row['post_id'] . "'>" . $row['title'] . "</a>
                                 </div>";
             if (strtolower(substr($row['image'], -3)) == "mp4" || strtolower(substr($row['image'], -4)) == "webm" || strtolower(substr($row['image'], -3)) == "mov") {
                 echo " <video id='postimg' src='pictures/posts/" . $row['image'] . "' controls> Something went wrong :( </video>";
@@ -181,50 +182,59 @@ if ($_GET['user'] == '') {
             }
             echo "
 <div id='postleft' style='display:inline-block;'>
-<a class='postpoints' id='" . $row['post_id'] . "' style='height: 35px; width: 35px; vertical-align:super; font-size:25px;'>" . $row['points'] . "</a>
+<a class='postpoints' id='" . $row['post_id'] . "' style='height: 35px; width: 35px; vertical-align:super; font-size:25px;'>" . $row['points'] . "</a>";
+            if (isset($_SESSION['username'])) {
+                if ($row['poster'] == $_SESSION['username']) {
+                    echo "<img id='postedit' class='" . $row['post_id'] . "' style='height: 35px; width: 35px; cursor: pointer;' onclick='postedit()' src='pictures/icons/edit.png'>";
+                } else {
 
-
+                    echo "
 <img class='" . $row['post_id'] . " upvote' name='" . $row['poster'] . "' style='height: 35px; width: 35px; cursor: pointer;' onclick='upvotef()' src='";
-            if (!isset($_SESSION['username'])) {
-                echo "pictures/icons/upvoteb.png";
-            } else {
-                $rs1 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND voter = '" . $_SESSION['username'] . "'");
-                if (mysqli_fetch_array($rs1)[0] > 0) {
-                    $rs2 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND action = 'like' AND voter = '" . $_SESSION['username'] . "'");
-                    if (mysqli_fetch_array($rs2)[0] > 0) {
-                        echo "pictures/icons/upvoteg.png";
-                    } else {
+                    if (!isset($_SESSION['username'])) {
                         echo "pictures/icons/upvoteb.png";
-                    }
-                } else {
-                    echo "pictures/icons/upvoteb.png";
-                }
-            }
-            echo "'>
-
-
-
-<img class='" . $row['post_id'] . " downvote' name='" . $row['poster'] . "' style='height: 35px; width: 35px; cursor: pointer;' onclick='downvotef()' src='";
-
-            if (!isset($_SESSION['username'])) {
-                echo "pictures/icons/downvoteb.png";
-            } else {
-                $rs3 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND voter = '" . $_SESSION['username'] . "'");
-                if (mysqli_fetch_array($rs3)[0] > 0) {
-                    $rs4 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND action = 'dislike' AND voter = '" . $_SESSION['username'] . "'");
-                    if (mysqli_fetch_array($rs4)[0] > 0) {
-                        echo "pictures/icons/downvoteg.png";
                     } else {
-                        echo "pictures/icons/downvoteb.png";
+                        $rs1 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND voter = '" . $_SESSION['username'] . "'");
+                        if (mysqli_fetch_array($rs1)[0] > 0) {
+                            $rs2 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND action = 'like' AND voter = '" . $_SESSION['username'] . "'");
+                            if (mysqli_fetch_array($rs2)[0] > 0) {
+                                echo "pictures/icons/upvoteg.png";
+                            } else {
+                                echo "pictures/icons/upvoteb.png";
+                            }
+                        } else {
+                            echo "pictures/icons/upvoteb.png";
+                        }
                     }
-                } else {
-                    echo "pictures/icons/downvoteb.png";
+                    echo "'>";
                 }
-            }
-            echo "'>
-<img style='cursor: pointer; height: 35px; width: 35px;' class='" . $row['post_id'] . " comment' onclick='commentsf()' src='pictures/icons/comments.png' alt='comments'>
-<img class='" . $row['post_id'] . " report' name='" . $row['poster'] . "' style='height: 35px; width: 35px; cursor: pointer;' onclick='reportf()' src='pictures/icons/report.png'>
+                if ($row['poster'] == $_SESSION['username']) {
+                    echo "<img id='postdelete' class='" . $row['post_id'] . "' style='height: 35px; width: 35px; cursor: pointer;' onclick='postpagedelete()' src='pictures/icons/delete.png'>";
+                } else {
+                    echo " <img class='" . $row['post_id'] . " downvote' name='" . $row['poster'] . "' style='height: 35px; width: 35px; cursor: pointer;' onclick='downvotef()' src='";
 
+                    if (!isset($_SESSION['username'])) {
+                        echo "pictures/icons/downvoteb.png";
+                    } else {
+                        $rs3 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND voter = '" . $_SESSION['username'] . "'");
+                        if (mysqli_fetch_array($rs3)[0] > 0) {
+                            $rs4 = mysqli_query($conn, "SELECT COUNT(*) FROM vote WHERE post_id = '" . $row['post_id'] . "' AND action = 'dislike' AND voter = '" . $_SESSION['username'] . "'");
+                            if (mysqli_fetch_array($rs4)[0] > 0) {
+                                echo "pictures/icons/downvoteg.png";
+                            } else {
+                                echo "pictures/icons/downvoteb.png";
+                            }
+                        } else {
+                            echo "pictures/icons/downvoteb.png";
+                        }
+                    }
+                    echo "'>";
+                }
+
+                echo "
+<img style='cursor: pointer; height: 35px; width: 35px;' class='" . $row['post_id'] . " comment' onclick='commentsf()' src='pictures/icons/comments.png' alt='comments'>
+<img class='" . $row['post_id'] . " report' name='" . $row['poster'] . "' style='height: 35px; width: 35px; cursor: pointer;' onclick='reportf()' src='pictures/icons/report.png'>";
+            }
+echo "  
 </div>
                                 <div id='postright'>
                                 <a id='postdate'>" . $row['uploaddate'] . "</a>
@@ -270,7 +280,11 @@ if ($_GET['user'] == '') {
                             ";
         }
         ?>
-        <?php include_once 'userspaginav.php' ?>
+        <?php
+        if ($total_pages > 1){
+            include_once 'userspaginav.php';
+        }
+        ?>
     </center>
 
 </main>

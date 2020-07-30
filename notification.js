@@ -1,4 +1,4 @@
-function notifidisp() {
+function notifipage() {
     let notifitab = document.getElementById("notifitab");
     let user = notifitab.className;
     let notifinum = document.getElementById("badge");
@@ -12,17 +12,7 @@ function notifidisp() {
         });
         notifinum.style.display = "none";
     });
-
-    if (notifitab.style.display !== "block"){
-        notifitab.style.display = "block";
-    }
-    else {
-        notifitab.style.display = "none";
-    }
-}
-function closenotifitab() {
-    let notifitab = document.getElementById("notifitab");
-    notifitab.style.display = "none";
+    window.location.replace("/notifications.php");
 }
 function filterf() {
     let ffilter = document.getElementById("ffilter");

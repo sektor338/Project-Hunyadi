@@ -8,10 +8,10 @@
     float: left;
     display: inline-block;
 }
-.commentsupperright{
+.commentsupperright {
     max-width: 400px;
     text-align: left;
-    margin-left: 70px;
+    margin-left: -50px;
 }
 .commentsupper{
     height: auto;
@@ -61,6 +61,7 @@
 }
 .comments{
     margin-left: 25px;
+    margin-right: 25px;
     display: block;
     margin-top: 50px;
 }
@@ -74,6 +75,7 @@
     vertical-align: top;
     padding-top: 0;
     padding-bottom: 0;
+    margin-right: 10px;
 }
 .commentsupperrightupdate{
     color: #F8F8F8;
@@ -81,6 +83,7 @@
     vertical-align: top;
     padding-top: 0;
     padding-bottom: 0;
+    margin-right: 10px;
 }
 .commentsupperrightuppoints{
     color: #F8F8F8;
@@ -88,6 +91,7 @@
     vertical-align: top;
     padding-top: 0;
     padding-bottom: 0;
+    margin-right: 10px;
 }
 .commentsupperrightupedit{
     max-width: 35px;
@@ -106,13 +110,15 @@
     max-width: 400px;
 }
 .commentsbottom{
-    margin-top: 20px;
+    margin-top: 10px;
+    max-width: 400px;
+    margin-left: -340px;
 }
 .commentsbottombuttons{
     width: 40px;
 }
 .commentdiv{
-    margin-top: 10px;
+    margin: 10px;
 }
 .commentload{
     background-color: #2C2C2C;
@@ -151,6 +157,23 @@
     .commentinput{
         font-size: 15px;
     }
+    .commentsbottom{
+        margin-left: -180px;
+    }
+    .commentsupperright{
+        margin-right: -170px;
+    }
+}
+@media only screen and (max-width: 580px){
+    .commentsbottom{
+        margin-left: -130px;
+    }
+    .commentsupperright{
+        margin-right: -220px;
+    }
+    .commentsupperrightdownp{
+        max-width: 350px;
+    }
 }
 @media only screen and (max-width: 450px){
     .commentwriteprofpic{
@@ -167,12 +190,21 @@
         margin-top: 25px;
     }
 }
-@media only screen and (max-width: 400px){
-    .commentsupperrightupdate{
-        display: none;
+@media only screen and (max-width: 430px){
+    .commentsbottom{
+        margin-left: -100px;
     }
+    .commentsupperright{
+        margin-right: -250px;
+    }
+}
+@media only screen and (max-width: 400px){
     .commentsbottom{
         margin-top: 0;
+        margin-left: -50px;
+    }
+    .commentsupperright{
+        margin-right: -300px;
     }
     .commentdiv{
         margin-top: 0;
@@ -195,9 +227,15 @@
     .commentsec{
         margin-top: 15px;
     }
+    .commentsupperrightdownp{
+        max-width: 250px;
+    }
 }
 @media only screen and (max-width: 350px){
     .commentinput{
         width: 200px;
+    }
+    .commentsupperrightdownp{
+        max-width: 200px;
     }
 }
