@@ -2,12 +2,12 @@
     background-color: #464646;
     display: none;
     margin: 20px;
-
     width: 450px;
     right: 20px;
     float: right;
     position: fixed;
     height: 450px;
+    z-index: 999;
     overflow: auto;
     border-radius: 15px;
     border-color: #F8F8F8;

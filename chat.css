@@ -1,0 +1,244 @@
+#friendlist{
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    width: 200px;
+    height: 40px;
+    display: block;
+    font-size: 20px;
+    background-color: #5D74DA;
+    color: #F8F8F8;
+    cursor: pointer;
+
+}
+#friendlistup{
+    cursor: pointer;
+    width: 200px;
+    background-color: #005DAB;
+    height: 30px;
+}
+.friendlistmid{
+    height: 425px;
+    overflow:auto;
+}
+.frienddiv{
+    height: 50px;
+    cursor: pointer;
+    border-style: solid;
+    border-top: #F8F8F8;
+    border-right: #F8F8F8;
+    border-left: #F8F8F8;
+    z-index: 99999;
+}
+.friendname{
+    margin-top: 15px;
+    display: inline-block;
+}
+#friendlistbottom{
+    height: 30px;
+    display: block;
+    padding: 5px;
+}
+.friendpic{
+    width: 30px;
+    float: left;
+    height: 30px;
+    margin-left: 3px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.friendstatus{
+    width: 10px;
+    float: right;
+    margin-top: 18px;
+    margin-right: 5px;
+    display: inline-block;
+}
+#friendlistsearch{
+    width: 130px;
+    display: inline-block;
+    background-color: #6F6F6F;
+    border-style: none;
+    color: #F8F8F8;
+    height: 25px;
+    border-radius: 20px;
+}
+#chat{
+    position: fixed;
+    color: #F8F8F8;
+    right: 20px;
+    bottom: 0;
+    width: 200px;
+    height: 500px;
+    background-color: #5D74DA;
+}
+.chattab{
+    position: fixed;
+    z-index: 9999999;
+    color: #F8F8F8;
+    bottom: 0;
+    width: 300px;
+    height: 350px;
+    background-color: #5D74DA;
+}
+.tab1{
+    right: 280px;
+    display: none;
+}
+.tab2{
+    right: 640px;
+    display: none;
+}
+#chattab1{
+    position: fixed;
+    right: 280px;
+    color: #F8F8F8;
+    z-index: 9999999;
+    bottom: 0;
+    width: 300px;
+    font-size: 20px;
+    height: 40px;
+    background-color: #5D74DA;
+}
+#chattab2{
+    position: fixed;
+    right: 640px;
+    z-index: 9999999;
+    font-size: 20px;
+    color: #F8F8F8;
+    bottom: 0;
+    width: 300px;
+    height: 40px;
+    background-color: #5D74DA;
+}
+.chatstatus{
+    width: 15px;
+    float: left;
+    margin-top: 13px;
+    margin-left: 10px;
+}
+.chatadiv{
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 150px;
+}
+.closechat{
+    width: 25px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.chattabup{
+    display: block;
+    background-color: #005DAB;
+    height: 50px;
+}
+.chatprofpic{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    float: left;
+}
+.chatname{
+    float: left;
+    color: #F8F8F8;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.messages{
+    display: block;
+    overflow:auto;
+    height: 250px;
+}
+.chatleftdiv{
+    float: left;
+    display: block;
+    margin: 10px 20px 10px 10px;
+    width: 200px;
+    text-align: left;
+}
+.chatrightdiv{
+    float: right;
+    display: block;
+    margin: 10px 10px 10px 20px;
+    width: 200px;
+    text-align: right;
+}
+.chatpic{
+    height: 40px;
+}
+.chatmessage{
+    background-color: #6F6F6F;
+    border-radius: 20px;
+    font-size: 20px;
+    max-width: 150px;
+    height: auto;
+    margin: 0;
+    display: inline-block;
+    padding: 8px;
+    word-wrap: break-word;
+}
+.chattext{
+    display: block;
+    background-color: #005DAB;
+    min-height: 50px;
+}
+.closechatup{
+    width: 25px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.minimize{
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.chatinput{
+    display: inline-block;
+    margin-top: 14px;
+    background-color: #6F6F6F;
+    border-style: none;
+    border-radius: 20px;
+    height: 25px;
+    float: right;
+    margin-right: 10px;
+    color: #F8F8F8;
+    font-size: 16px;
+    width: 150px;
+}
+.emote{
+    display: inline-block;
+    width: 25px;
+    float: right;
+    margin-top: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.sendchat{
+    display: inline-block;
+    width: 25px;
+    float: right;
+    margin-top: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.userchatstatus{
+    width: 10px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.messageprofpic{
+    display: inline-block;
+    width: 30px;
+    margin-bottom: -12px;
+}

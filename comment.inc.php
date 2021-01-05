@@ -54,7 +54,7 @@ if (isset($_POST['caction'])) {
                 if (mysqli_fetch_array($crs1)[0]> 0) {
                     $sql = "DELETE FROM cvote  WHERE cpost_id = '".$commentid."' AND cvoter = '".$cvoter."'";
                     mysqli_query($conn,$sql);
-                    $sql = "DELETE FROM notifications  WHERE contentid = $commentid";
+                    $sql = "DELETE FROM notifications  WHERE contentid = '".$commentid."' AND sender='".$cvoter."'";
                     mysqli_query($conn, $sql);
                 }
                 else {
@@ -80,7 +80,7 @@ if (isset($_POST['caction'])) {
                 if (mysqli_fetch_array($crs2)[0]> 0) {
                     $sql = "DELETE FROM cvote  WHERE cpost_id = '".$commentid."' AND cvoter = '".$cvoter."'";
                     mysqli_query($conn,$sql);
-                    $sql = "DELETE FROM notifications  WHERE contentid = $commentid";
+                    $sql = "DELETE FROM notifications  WHERE contentid = '".$commentid."' AND sender='".$cvoter."'";
                     mysqli_query($conn, $sql);
                 }
                 else {

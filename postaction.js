@@ -71,7 +71,7 @@ function postpagedelete() {
             });
         });
         alert("You've deleted your post!");
-        window.location.replace("https://eaglesnest88.media/fresh.php");
+        window.location.replace("https://eaglesnest88.com/fresh.php");
     }
     else{
         alert("You can't delete posts that has more or less points than 0!");

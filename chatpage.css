@@ -1,0 +1,399 @@
+#leftdiv{
+    width: 350px;
+    background-color: #6F6F6F;
+    position: absolute;
+    top: 43px; bottom: 0; left: 0;
+}
+#friendlistup{
+    text-align: center;
+}
+#chata{
+    font-size: 25px;
+    margin-top: 10px;
+}
+a{
+    color: #F8F8F8;
+    font-size: 20px;
+}
+#rightdiv{
+    width: 350px;
+    background-color: #6F6F6F;
+    position: absolute;
+    top: 43px; right: 0; bottom: 0;
+}
+#centerup{
+    height: 50px;
+    top: 43px;
+    display: none;
+}
+#centermid{
+    overflow:auto;
+    bottom: 90px;left: 350px;right: 350px;
+    top: 47px;
+    position: fixed;
+}
+#userpic{
+    height: 40px;
+}
+#centerdiv{
+    position: absolute;
+    top: 43px; bottom: 0; left: 350px; right: 350px;
+}
+#centerbottom{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    bottom: 0;left: 350px;right: 350px;
+    position: fixed;
+    height: 80px;
+    width: auto;
+    background-color: #005DAB;
+}
+#friendlistup{
+    width: 350px;
+    background-color: #005DAB;
+    height: 40px;
+}
+.friendlistmid{
+    width: 350px;
+    top: 43px; bottom: 40px; left: 0;
+    position: absolute;
+    overflow:auto;
+}
+.frienddiv{
+    width: 337px;
+    height: 50px;
+    cursor: pointer;
+    border-style: solid;
+    border-top: #F8F8F8;
+    border-right: #F8F8F8;
+    border-left: #F8F8F8;
+    z-index: 99999;
+}
+.friendname{
+    margin-top: 15px;
+    display: inline-block;
+}
+#friendlistbottom{
+    width: 350px;
+    height: 40px;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    border-top: 5px;
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-color: #2A2A2A;
+}
+.friendpic{
+    width: 30px;
+    float: left;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.friendstatus{
+    width: 20px;
+    float: right;
+    margin-top: 18px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-left: 5px;
+}
+#friendlistsearch{
+    width: 300px;
+    display: inline-block;
+    background-color: #464646;
+    border-style: none;
+    color: #F8F8F8;
+    height: 25px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+#unreadm{
+    font-size: 20px;
+    float: right;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    width: 25px;
+    text-align: center;
+    height: 25px;
+    margin-top: 14px;
+    margin-right: 5px;
+}
+.chatleftdiv{
+    float: left;
+    display: block;
+    margin: 10px 20px 10px 10px;
+    width: 800px;
+    text-align: left;
+}
+.chatrightdiv{
+    float: right;
+    display: block;
+    margin: 10px 10px 10px 20px;
+    width: 800px;
+    text-align: right;
+}
+.chatpic{
+    height: 40px;
+}
+.chatmessage{
+    background-color: #6F6F6F;
+    color: #F8F8F8;
+    border-radius: 20px;
+    font-size: 20px;
+    max-width: 600px;
+    height: auto;
+    margin: 0;
+    display: inline-block;
+    padding: 8px;
+    word-wrap: break-word;
+}
+.chattext{
+    display: block;
+    background-color: #005DAB;
+    min-height: 50px;
+}
+.messageprofpic{
+    display: inline-block;
+    width: 40px;
+    margin-bottom: -12px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.sendchat{
+    display: inline-block;
+    width: 40px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.chatinput{
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #6F6F6F;
+    border-style: none;
+    border-radius: 20px;
+    height: 25px;
+    float: right;
+    margin-right: 10px;
+    color: #F8F8F8;
+    font-size: 16px;
+    width: 800px;
+}
+
+@media only screen and (max-width: 1700px) {
+    #rightdiv{
+        width: 300px;
+    }
+    #leftdiv{
+        width: 300px;
+    }
+    #friendlistsearch{
+        width: 250px;
+    }
+    #friendlistbottom{
+        width: 300px;
+    }
+    #friendlistcenter{
+        width: 300px;
+    }
+    #centermid{
+        left: 300px;
+        right: 300px;
+    }
+    #centerbottom{
+        left: 300px;
+        right: 300px;
+    }
+    #centerdiv{
+        left: 300px; right: 300px;
+    }
+    .friendlistmid{
+        width: 300px;
+    }
+    .frienddiv{
+        width: 287px;
+    }
+    #friendlistup{
+        width: 300px;
+    }
+    #chatinput1{
+        width: 500px;
+    }
+    #sendchat1{
+        width: 30px;
+        margin-top: 25px;
+    }
+}
+@media only screen and (max-width: 1430px) {
+    .chatleftdiv{
+        width: 700px;
+    }
+    .chatrightdiv{
+        width: 700px;
+    }
+    .chatmessage{
+        max-width: 400px;
+    }
+}
+@media only screen and (max-width: 1350px) {
+    .chatleftdiv{
+        width: 500px;
+    }
+    .chatrightdiv{
+        width: 500px;
+    }
+    .chatmessage{
+        max-width: 300px;
+    }
+    .friendstatus{
+        width: 15px;
+    }
+    #chatinput1{
+        width: 350px;
+    }
+}
+@media only screen and (max-width: 1150px) {
+    .chatleftdiv{
+        width: 300px;
+    }
+    .chatrightdiv{
+        width: 300px;
+    }
+    .chatmessage{
+        max-width: 200px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .chatleftdiv{
+        width: 300px;
+    }
+    .chatrightdiv{
+        width: 300px;
+    }
+    .chatmessage{
+        max-width: 200px;
+    }
+    #chatinput1{
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .chatleftdiv{
+        width: 350px;
+    }
+    .chatrightdiv{
+        width: 350px;
+    }
+    .chatmessage{
+        max-width: 250px;
+    }
+    #chatinput1{
+        width: 200px;
+    }
+    #rightdiv{
+        width: 200px;
+    }
+    #leftdiv{
+        width: 200px;
+    }
+    #friendlistsearch{
+        width: 150px;
+    }
+    #friendlistbottom{
+        width: 200px;
+    }
+    #friendlistcenter{
+        width: 200px;
+    }
+    #centermid{
+        left: 200px;
+        right: 200px;
+    }
+    #centerbottom{
+        left: 200px;
+        right: 200px;
+    }
+    #centerdiv{
+        left: 200px; right: 200px;
+    }
+    .friendlistmid{
+        width: 200px;
+    }
+    .frienddiv{
+        width: 187px;
+    }
+    #friendlistup{
+        width: 200px;
+    }
+    .friendname{
+        font-size: 15px;
+    }
+    .friendstatus{
+        width: 10px;
+    }
+    .friendpic{
+        width: 25px;
+        height: 25px;
+    }
+}
+@media only screen and (max-width: 820px) {
+    .chatleftdiv{
+        width: 300px;
+    }
+    .chatrightdiv{
+        width: 300px;
+    }
+    .chatmessage{
+        max-width: 150px;
+    }
+    #chatinput1{
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 726px) {
+    #rightdiv{
+        display: none;
+    }
+    #leftdiv{
+        display: none;
+    }
+    .chatmessage{
+        max-width: 150px;
+    }
+    #chatinput1{
+        width: 60%;
+        float: none;
+    }
+    #centerup{
+        display: block;
+    }
+    #centerbottom{
+        bottom: 0;left: 0;right: 0;
+    }
+}
+@media only screen and (min-width: 2300px) {
+    .chatleftdiv{
+        width: 1000px;
+    }
+    .chatrightdiv{
+        width: 1000px;
+    }
+    .chatmessage{
+        max-width: 750px;
+    }
+    #chatinput1{
+        width: 500px;
+    }
+}

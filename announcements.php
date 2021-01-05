@@ -1,5 +1,6 @@
 <p id="announcementsp">
-    Devlog #1 <br>
-    After 1st of August the site's url(link) will be changed to eaglesnest88.com <br>
-    Please share this information with everyone.
+    Can you belive this website is made by one man? Me neither. <br>
+    If you still believe this page is for a good cause <br>
+    please support me by sharing it with others. <br>
+    /sektor338 - Martin/
 </p>

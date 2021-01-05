@@ -66,7 +66,7 @@ while ($row = mysqli_fetch_array($res_data)) {
                 <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a href="post.php?postid='.$row["contentid"].'" class="notifitext" href="post.php?postid='.$rssql["post_id"].'">disliked your comment.</a>
+                <a class="notifiname" href="users.php?user='.$row["sender"].'">'.$row["sender"].' </a><a href="post.php?postid='.$rssql["post_id"].'" class="notifitext" href="post.php?postid='.$rssql["post_id"].'">disliked your comment.</a>
         </div>
     </div>';
     }
@@ -136,7 +136,7 @@ while ($row = mysqli_fetch_array($res_data)) {
             <img class="notifipic" src="'.$fulldest.'" alt="profpic">
         </div>
         <div class="rightnotifidiv">
-            <a class="notifiname" href="users.php?user=sektor338">'.$row['sender'].' </a><a class="notifitext">wants to be your friend.</a>
+            <a class="notifiname" href="users.php?user='.$row['sender'].'">'.$row['sender'].' </a><a class="notifitext">wants to be your friend.</a>
             <div class="friendnotifi">
                 <button class="friendnotifibtn acceptbtn" name="'.$row['contentid'].'" onclick="faccept()">Accept</button>
                 <button class="friendnotifibtn denybtn" name="'.$row['contentid'].'" onclick="fdeny()">Deny</button>

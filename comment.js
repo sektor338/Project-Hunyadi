@@ -180,12 +180,12 @@ function cupvotef() {
                 },
                 success:function(response) {
                     point.item(0).innerHTML = response;
-                    if (thisimg.src === "https://eaglesnest88.media/pictures/icons/upvoteb.png"){
-                        thisimg.src = "https://eaglesnest88.media/pictures/icons/upvoteg.png";
-                        otherimg.item(0).src = "pictures/icons/downvoteb.png";
+                    if (thisimg.src === "https://eaglesnest88.com/pictures/icons/upvoteb.png"){
+                        thisimg.src = "https://eaglesnest88.com/pictures/icons/upvoteg.png";
+                        otherimg.item(0).src = "https://eaglesnest88.com/pictures/icons/downvoteb.png";
                     }
                     else {
-                        thisimg.src = "https://eaglesnest88.media/pictures/icons/upvoteb.png";
+                        thisimg.src = "https://eaglesnest88.com/pictures/icons/upvoteb.png";
                     }
                 }
             });
@@ -219,12 +219,12 @@ function cdownvotef() {
                 },
                 success:function(response) {
                     point.item(0).innerHTML = response;
-                    if (thisimg.src === "https://eaglesnest88.media/pictures/icons/downvoteb.png"){
-                        thisimg.src = "https://eaglesnest88.media/pictures/icons/downvoteg.png";
-                        otherimg.item(0).src = "pictures/icons/upvoteb.png";
+                    if (thisimg.src === "https://eaglesnest88.com/pictures/icons/downvoteb.png"){
+                        thisimg.src = "https://eaglesnest88.com/pictures/icons/downvoteg.png";
+                        otherimg.item(0).src = "https://eaglesnest88.com/pictures/icons/upvoteb.png";
                     }
                     else {
-                        thisimg.src = "https://eaglesnest88.media/pictures/icons/downvoteb.png";
+                        thisimg.src = "https://eaglesnest88.com/pictures/icons/downvoteb.png";
                     }
                 }
             });

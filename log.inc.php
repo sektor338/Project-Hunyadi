@@ -44,7 +44,24 @@ session_start();
                                     $_SESSION['parka'] = $row['parka'];
                                     $_SESSION['patreon'] = $row['patreon'];
                                     $_SESSION['division'] = $row['waffenssdiv'];
-                                    header("Location: index.php?login=success");
+                                    $sql = "UPDATE users SET userstatus='1' WHERE name='".$_SESSION['username']."'";
+                                    $sqlr = mysqli_query($conn,$sql);
+
+                                  $time = date("Y-m-d");
+                                  $sql = "SELECT reg_date FROM users WHERE name='".$_SESSION['username']."'";
+                                  $sqlr = mysqli_query($conn, $sql);
+                                  $sqlrs = mysqli_fetch_array($sqlr);
+                                  $diff = strtotime($time) - strtotime($sqlrs[0]);
+                                  $years = floor($diff / (365*60*60*24));
+                                  echo $years;
+
+                                  if ($years >= 1){
+                                      echo $diff;
+                                      $sql = "UPDATE users SET reward='pictures/rewards/ss1year.png' WHERE name='".$_SESSION['username']."'";
+                                      $sqlr = mysqli_query($conn, $sql);
+                                  }
+
+                                  header("Location: index.php?login=success");
                                     exit();
                               }
                         }

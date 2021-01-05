@@ -1,0 +1,87 @@
+#friendlistup{
+    text-align: center;
+    font-size: 30px;
+}
+#headernav{
+    z-index: 9999;
+}
+#friendlistup{
+    width: 100%;
+    background-color: #005DAB;
+    height: 40px;
+}
+.friendlistmid{
+    width: 100%;
+    overflow:auto;
+}
+.frienddiv{
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border-style: solid;
+    background-color: #6F6F6F;
+    border-top: #F8F8F8;
+    border-right: #F8F8F8;
+    border-left: #F8F8F8;
+    z-index: 99999;
+}
+.friendname{
+    margin-top: 15px;
+    display: inline-block;
+}
+#friendlistbottom{
+    width: 100%;
+    height: 40px;
+    display: block;
+    text-align: center;
+    border-top: 5px;
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-color: #2A2A2A;
+}
+a{
+    color: #F8F8F8;
+    font-size: 20px;
+}
+.friendpic{
+    width: 30px;
+    float: left;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.friendstatus{
+    width: 20px;
+    float: right;
+    margin-top: 18px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-left: 5px;
+}
+#friendlistsearch{
+    width: 80%;
+    display: block;
+    background-color: #464646;
+    border-style: none;
+    color: #F8F8F8;
+    height: 25px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+#unreadm{
+    font-size: 20px;
+    float: right;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    width: 25px;
+    text-align: center;
+    height: 25px;
+    margin-top: 14px;
+    margin-right: 5px;
+}

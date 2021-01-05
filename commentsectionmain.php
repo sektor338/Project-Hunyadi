@@ -22,7 +22,7 @@ while ($commentrow = mysqli_fetch_array($commentres_data)) {
                 </div>
                 <div class='commentsupperright'>
                     <div class='commentsupperrightup'>
-                        <a class='commentsupperrightupname' href=''>".$commentrow['commenter']."</a>
+                        <a class='commentsupperrightupname' href='users.php?user=".$commentrow['commenter']."'>".$commentrow['commenter']."</a>
                         <a class='commentsupperrightupdate'>".substr($commentrow['comment_date'], 0, -9)."</a>
                         <a class='".$commentrow['comment_id']." commentsupperrightuppoints'>".$commentrow['cpoints']."</a>
                 </div>
@@ -35,13 +35,9 @@ while ($commentrow = mysqli_fetch_array($commentres_data)) {
     if (isset($_SESSION['username'])){
         if ($_SESSION['username'] != $commentrow['commenter']){
             echo "<img class='".$commentrow['comment_id']." cupvote' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='cupvotef()' src='";
-            if (!isset($_SESSION['username'])) {
-                echo "pictures/icons/upvoteb.png";
-            }
-            else {
-                $rs1 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND cvoter = '".$_SESSION['username']."'");
+                $rs1 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['comment_id']."' AND cvoter = '".$_SESSION['username']."'");
                 if (mysqli_fetch_array($rs1)[0]> 0) {
-                    $rs2 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND caction = 'like' AND cvoter = '".$_SESSION['username']."'");
+                    $rs2 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['comment_id']."' AND caction = 'clike' AND cvoter = '".$_SESSION['username']."'");
                     if (mysqli_fetch_array($rs2)[0]> 0) {
                         echo "pictures/icons/upvoteg.png";
                     }
@@ -52,16 +48,10 @@ while ($commentrow = mysqli_fetch_array($commentres_data)) {
                 else {
                     echo "pictures/icons/upvoteb.png";
                 }
-            }
             echo "'> <img class='".$commentrow['comment_id']." cdownvote' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='cdownvotef()' src='";
-
-            if (!isset($_SESSION['username'])) {
-                echo "pictures/icons/downvoteb.png";
-            }
-            else {
-                $rs3 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND cvoter = '".$_SESSION['username']."'");
+                $rs3 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['comment_id']."' AND cvoter = '".$_SESSION['username']."'");
                 if (mysqli_fetch_array($rs3)[0]> 0) {
-                    $rs4 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['post_id']."' AND caction = 'dislike' AND cvoter = '".$_SESSION['username']."'");
+                    $rs4 = mysqli_query($conn, "SELECT COUNT(*) FROM cvote WHERE cpost_id = '".$commentrow['comment_id']."' AND caction = 'cdislike' AND cvoter = '".$_SESSION['username']."'");
                     if (mysqli_fetch_array($rs4)[0]> 0) {
                         echo "pictures/icons/downvoteg.png";
                     }
@@ -72,7 +62,7 @@ while ($commentrow = mysqli_fetch_array($commentres_data)) {
                 else {
                     echo "pictures/icons/downvoteb.png";
                 }
-            }echo "'>";
+                echo "'>";
             $checkreportedcomments = mysqli_query($conn, "SELECT COUNT(*) FROM commentreports WHERE commentid = '".$commentrow['comment_id']."' AND reporter = '".$_SESSION['username']."'");
             if (mysqli_fetch_array($checkreportedcomments)[0] == 0 && $commentrow['commenter'] != $_SESSION['username']) {
                 echo "<img class='".$commentrow['comment_id']." commentsbottombuttons' name='".$commentrow['commenter']."' style='height: 35px; width: 35px; cursor: pointer;' onclick='creportf()' src='pictures/icons/report.png'>";

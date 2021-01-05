@@ -28,7 +28,7 @@
                                           We had ideals, white ideals and now our Nation has been ruined! Where is the resistance?! Why isn't anyone trying to stop it?!
                                           Yet since then again and again the Hungarians and the white race has been trampled underfoot by the hook-nosed bankers! By the degenerate politicians,
                                           the celebrities, the entire upper-class looks down on the white people in disgust and contempt!
-                                          The time is here for National Socialts to stand up and take back the land that we love!<br>
+                                          The time is here for National Socialists to stand up and take back the land that we love!<br>
                                           Heil Hitler! Heil Victory!
 
                                     </p>

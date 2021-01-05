@@ -3,14 +3,14 @@ if(isset($_POST['request'])){
     require "dbh.inc.php";
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
-    $url = "https://eaglesnest88.media/create-new-pwd.php?selector=" .$selector. "&validator=" .bin2hex($token);
+    $url = "https://eaglesnest88.com/create-new-pwd.php?selector=" .$selector. "&validator=" .bin2hex($token);
     $expire = date("U") + 1800;
 
     $email = $_POST['email'];
     $sql = "DELETE FROM pwdreset WHERE pwdResetEmail =?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        header("Location: https://eaglesnest88.media?SomethingWentWrong");
+        header("Location: https://eaglesnest88.com?SomethingWentWrong");
         exit();
     }
     else{
@@ -21,7 +21,7 @@ if(isset($_POST['request'])){
             VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        header("Location: https://eaglesnest88.media?SomethingWentWrong");
+        header("Location: https://eaglesnest88.com?SomethingWentWrong");
         exit();
     }
     else{
@@ -43,7 +43,7 @@ if(isset($_POST['request'])){
     $headers .= "Content-type: text/html\r\n";
 
     mail($to, $subject, $message, $headers);
-    header("Location: https://eaglesnest88.media/login.php?email=sent");
+    header("Location: https://eaglesnest88.com/login.php?email=sent");
 }
 else{
     header("Location: index.php?error");

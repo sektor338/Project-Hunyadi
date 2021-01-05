@@ -16,7 +16,7 @@ if (isset($_POST['pwdresetsubmit'])){
     $sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpires >=?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        header("Location: https://eaglesnest88.media?SomethingWentWrong");
+        header("Location: https://eaglesnest88.com?SomethingWentWrong");
         exit();
     }
     else{
@@ -38,7 +38,7 @@ if (isset($_POST['pwdresetsubmit'])){
                 $sql = "SELECT * FROM users WHERE email=?";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)){
-                    header("Location: https://eaglesnest88.media?SomethingWentWrong");
+                    header("Location: https://eaglesnest88.com?SomethingWentWrong");
                     exit();
                 }
                 else{
@@ -52,7 +52,7 @@ if (isset($_POST['pwdresetsubmit'])){
                         $sql = "UPDATE users SET pwd=? WHERE email=?";
                         $stmt = mysqli_stmt_init($conn);
                         if (!mysqli_stmt_prepare($stmt, $sql)){
-                            header("Location: https://eaglesnest88.media?SomethingWentWrong");
+                            header("Location: https://eaglesnest88.com?SomethingWentWrong");
                             exit();
                         }
                         else {

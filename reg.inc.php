@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Europe/Budapest');
       if (isset($_POST['submit'])) {
 
             include_once 'dbh.inc.php';
@@ -14,6 +14,7 @@
             $ideology = mysqli_real_escape_string($conn, $_POST['ideology']);
             $religion = mysqli_real_escape_string($conn, $_POST['religion']);
             $born = mysqli_real_escape_string($conn, $_POST['born']);
+            $reg_date = date("Y-m-d H:i:s");
             $points = 0;
             $userdesc = "";
 
@@ -47,8 +48,8 @@
                                           }
                                           else {
                                                 $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-                                                $sql = "INSERT INTO users (name, pwd, email, country, sex, race,  ideology, religion, born, points)
-                                                VALUES ('$username', '$hashedPwd', '$email', '$country', '$sex', '$race', '$ideology', '$religion', '$born', '$points')";
+                                                $sql = "INSERT INTO users (name, pwd, email, country, sex, race,  ideology, religion, born, points, reg_date)
+                                                VALUES ('$username', '$hashedPwd', '$email', '$country', '$sex', '$race', '$ideology', '$religion', '$born', '$points', '$reg_date')";
                                                 mysqli_query($conn, $sql);
                                                 header("Location: actionpage.php");
                                           }
